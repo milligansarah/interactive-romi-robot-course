@@ -1,0 +1,38 @@
+#contentBlock {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    gap: 15px;
+    max-width: 70%;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+#contentBlock > * {
+    margin: 0;
+}
+
+#contentBlock > * > p {
+    margin-top: 0;
+}
+
+#lessonAndSubheading {
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    gap: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#lessonAndSubheading > h1 {
+    font-size: 20px;
+}
+
+#lessonAndSubheading > h2 {
+    color: cadetblue;
+    font-size: 18px;
+    font-weight: normal;
+}

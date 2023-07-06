@@ -1,0 +1,56 @@
+.sidenav {
+    width: 100%;
+    max-height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.sidenav::-webkit-scrollbar {
+    display: none; 
+}
+ 
+.sidenavClosed {
+    height: 100vh;
+    max-width: 60px;
+    overflow: hidden;
+}
+
+.sidenavContainer {
+    width: 40%;
+    height: 100vh;
+    margin: 0;
+    border-right: solid 1px black;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.sideitem {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #B2BAC2;
+    text-decoration: none;
+}
+ 
+.linkText {
+    padding-left: 16px;
+    margin: 20px;
+}
+ 
+.linkTextClosed {
+    visibility: hidden;
+}
+ 
+.menuBtn {
+    align-self: center;
+    align-self: flex-start; 
+    justify-self: flex-end;
+    color: #B2BAC2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+#progressBarContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 300px;
+    bottom: 0;
+    margin-bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+.progressBar {
+    flex-grow: 1;
+}
