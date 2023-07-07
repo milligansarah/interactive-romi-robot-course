@@ -8,5 +8,6 @@ Currently only the data from lessons 2-4 is live [here](https://milligansarah.gi
 
 * Addition of lessons 1 and 5-20 in `course-data.tsx`
 * Lots of code cleanup, refactoring, and documentation
-* Enhance user-friendliness of course creation for future applications
+* Improve user-friendliness of course creation for future applications
 * Create course start and end screens
+* UI Enhancements ✨
