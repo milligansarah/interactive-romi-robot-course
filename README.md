@@ -1,7 +1,11 @@
 # Interactive Romi Robot Course
 
-An easy-to-follow version of [this PDF course](https://github.com/czbeatty/FRC-Romi-Programming-Course), built with React (Typescript). Further code cleanup and refactoring on the initial master commit will be pushed soon!
+An easy-to-follow version of [this PDF course](https://github.com/czbeatty/FRC-Romi-Programming-Course), built with React (Typescript).
 
-Currently only the data from lessons 2-4 are live, although the remaining lessons are also coming soon. Check out the beginning of lesson 2 [here](https://milligansarah.github.io/interactive-romi-robot-course/#/lesson-2/0)
+Currently only the data from lessons 2-4 is live [here](https://milligansarah.github.io/interactive-romi-robot-course/), although the remaining lessons are coming soon.
 
-Stay tuned for a more detailed README!
+## Upcoming features & fixes
+
+* Addition of lessons 1 and 5-20 in `course-data.tsx`
+* Lots of code cleanup, refactoring, and documentation
+* More user-friendly course creation for future applications
