@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/interactive-romi-robot-course/static/css/main.e6157b46.css",
-    "main.js": "/interactive-romi-robot-course/static/js/main.e2049114.js",
+    "main.css": "/interactive-romi-robot-course/static/css/main.3e26e52a.css",
+    "main.js": "/interactive-romi-robot-course/static/js/main.ac812ffa.js",
     "static/js/787.5bdc1f01.chunk.js": "/interactive-romi-robot-course/static/js/787.5bdc1f01.chunk.js",
     "index.html": "/interactive-romi-robot-course/index.html",
-    "main.e6157b46.css.map": "/interactive-romi-robot-course/static/css/main.e6157b46.css.map",
-    "main.e2049114.js.map": "/interactive-romi-robot-course/static/js/main.e2049114.js.map",
+    "main.3e26e52a.css.map": "/interactive-romi-robot-course/static/css/main.3e26e52a.css.map",
+    "main.ac812ffa.js.map": "/interactive-romi-robot-course/static/js/main.ac812ffa.js.map",
     "787.5bdc1f01.chunk.js.map": "/interactive-romi-robot-course/static/js/787.5bdc1f01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6157b46.css",
-    "static/js/main.e2049114.js"
+    "static/css/main.3e26e52a.css",
+    "static/js/main.ac812ffa.js"
   ]
 }
