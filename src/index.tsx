@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ContentBlockComponent from './Components/ContentBlockComponent';
-import {Route, Routes, BrowserRouter, HashRouter, createHashRouter, RouterProvider} from 'react-router-dom';
+import {Route, Routes, HashRouter} from 'react-router-dom';
 import { ReactElement } from 'react';
 import LessonCompleteComponent from './Components/LessonCompleteComponent';
 import contentBlock from './Types/ContentBlockType';
@@ -11,6 +11,7 @@ import subHeading from './Types/SubHeadingType';
 import CourseDataType from './Types/CourseDataType';
 import CourseData from './course-data';
 import SideNavigationComponent from './Components/SideNavigationComponent';
+import HomeComponent from './Components/HomeComponent';
 
 function generateRoutes(data: CourseDataType) : ReactElement {
   let lessonRoutesList : ReactElement[] = [];
@@ -63,24 +64,18 @@ function generateRoutes(data: CourseDataType) : ReactElement {
     const lessonPath : string = lessonKey.split(' -')[0].split(' ').join('-');
     lessonRoutesList.push(<Route path={lessonPath}>{currentLessonBlockRoutesList.map((item) => item)}</Route>);
   }
-  console.log(lessonRoutesList)
-  return <Routes>{lessonRoutesList.map((item) => item)}</Routes>
+  return <Routes>
+    <Route path='/' element={<HomeComponent />}></Route>
+    {lessonRoutesList.map((item) => item)}
+  </Routes>
 }
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-// const router = createHashRouter([
-//   {
-//     path: "/*",
-//     element: generateRoutes(CourseData),
-//   }
-// ]);
-
 root.render(
   <React.StrictMode>
-    {/* <RouterProvider router={router}></RouterProvider> */}
     <HashRouter basename='/'>
       {generateRoutes(CourseData)}
     </HashRouter>
