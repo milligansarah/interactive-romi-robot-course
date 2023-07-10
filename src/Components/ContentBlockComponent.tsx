@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import './ContentBlockComponent.css';
-import { QuestionMark, Search, Notes, Keyboard, ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { QuestionMark, Search, Notes, Keyboard, SmartToy } from '@mui/icons-material';
 import ProgressBarComponent from './ProgressBarComponent';
 import SideNavigationComponent from './SideNavigationComponent';
 import ActionType from '../Types/ActionTypeEnum';
@@ -24,6 +24,8 @@ function ContentBlockComponent(props: ContentBlockProps) {
         return <Notes/>
       case ActionType.Code:
         return <Keyboard/>
+      case ActionType.Robot:
+        return <SmartToy/>
       default:
         return <QuestionMark/>
     }

@@ -3,7 +3,93 @@ import ActionType from "./Types/ActionTypeEnum";
 
 const data : CourseData = {
   'Lesson 1 - Getting Started': {
-
+    'totalParagraphs': 20,
+    'Introduction': {
+      0: {
+        actionType: ActionType.Read,
+        content: <p>Welcome to learning programming with the Romi robot! In this course, you’ll learn how to program robots for fun or for competition, and how to write software, which you’ll be able to do for robots, and for other uses as well. This course assumes no prior experience of writing software. If you have some prior experience and know the basics, you will still find value in this course as it relates to programming robots and the Romi in particular. If you’re familiar with FIRST Robotics and want to learn how to program robots that compete in FIRST competitions, this is the perfect course for you. By the time you finish this course you’ll have built up skills to contribute to any team you’re a part of and created a foundation for yourself for future learning, leading you on a path to becoming an expert software developer. In this first lesson, we’ll focus on setting up the Romi and making it move.</p>
+      },
+      1: {
+        actionType: ActionType.Read,
+        content: <p><strong>Setting up your robot and getting the first program to run can be the most frustrating part of programming.</strong> Unfortunately, there is no way around this. But, if you follow the steps here, you will succeed, and you’ll be driving by the end of this lesson. If something fails the first time you try it, don’t give up – once you make it through this lesson, the succeeding lessons will be more interactive and fun. Also note that although this lesson seems long by page count, most of the pages are filled up with  images, so it will be faster than you might think.</p>
+      }
+    },
+    'Necessary Materials': {
+      2: {
+        actionType: ActionType.Read,
+        content: <p>To complete this course, you’ll need the following things...</p>
+      },
+      3: {
+        actionType: ActionType.Read,
+        content: <p><strong>A Romi robot</strong> (of course). You do NOT need the arm attachment.</p>
+      },
+      4: {
+        actionType: ActionType.Read,
+        content: <p><strong>The data USB cable that comes with the Romi kit.</strong> It’s important to use this specific cable, as some USB cables are for power only and will NOT work. </p>
+      },
+      5: {
+        actionType: ActionType.Read,
+        content: <p><strong>One or more joysticks/controllers for driving the robot.</strong> This course uses a gamepad-style controller (such as an Xbox controller, Logitech F310, or similar) for the examples, but you can use any controller recognized by your computer, as long as it has at least two joystick axes. The course explains how to account for differences in controllers, although there are some instances where driving may feel uncomfortable if you only have a single joystick.</p>
+      },
+      6: {
+        actionType: ActionType.Read,
+        content: <p><strong>A supply of AA batteries.</strong> You will likely want rechargeable batteries because you will go through a lot of batteries in this course, and it will be expensive and wasteful if you can’t recharge them. The Romi uses six batteries at once and a full charge will last up to a few hours under normal use where you spend more time writing code than driving but can run out faster than that if you spend a lot of time driving. The Romi comes with six batteries, so you can get started on the first couple lesson with those batteries while waiting for a rechargeable kit to kit to arrive, if you purchase a kit online.</p>
+      },
+      7: {
+        actionType: ActionType.Read,
+        content: <p><strong>A computer with wireless internet access.</strong> If you have a computer without wireless access, you can buy a wireless adapter for less than $20. You need wireless internet to connect to the Romi to deploy code and drive.</p>
+      },
+      8: {
+        actionType: ActionType.Read,
+        content: <p><strong>A computer with a wired (ethernet) internet port, and an ethernet cable.</strong> This can be the same computer as the one with wireless, or a different one. You will need to plug an ethernet cable from your computer directly into the Romi during setup, but do not need to access the internet with a wired connection at any point. If your computer doesn’t have an ethernet port, you can use an ethernet USB pigtail to plug an ethernet cable into a USB port instead. (You can search Amazon for “ethernet USB pigtail” if you need to purchase one – they’re typically $10-20).</p>
+      },
+      9: {
+        actionType: ActionType.Read,
+        content: <p><strong>An internet connection.</strong> In addition to connecting to the Romi, this course has links to external materials you’ll need to access. In this lesson, you’ll need to download two files which are each about a gigabyte, which can take a few minutes on slower connections. These are the only large  downloads in the course.</p>
+      },
+      10: {
+        actionType: ActionType.Read,
+        content: <p><strong>An SD card reader/writer.</strong> The Romi comes with an SD card and you will need to install firmware on this card before your robot will work. If you’re using a laptop, there’s a good chance it already has a slot for SD cards.</p>
+      },
+    },
+    'Setting Up Your Romi': {
+      11: {
+        actionType: ActionType.Read,
+        content: <p>There are two main steps in getting started, both of which are explained in detail below: installing VSCode with the WPILib library, and installing firmware onto your Romi. If you know that one or both of these steps have been done for you already, you can skip that step accordingly. If you aren’t sure, then do not skip the step.</p>
+      }
+    },
+    'Turning your Romi On and Off & the Low Battery Signal': {
+      12: {
+        actionType: ActionType.Robot,
+        image: <img src='./images/lesson1_12.png'/>,
+        content: <p>The Romi has two power switches – one is a switch, and one is just a button. To turn it on, you simply have to flip the switch to the “On” position. But to turn it off, you have to flip the switch to “Off” and then push the power button. If you don’t do this, the Romi will remain on and eventually drain its batteries, so make sure you fully turn it off whenever you’re not using it.</p>
+      },
+      13: {
+        actionType: ActionType.Read,
+        content: <p>When the Romi is low on batteries, it will start playing noises. If you hear it playing noises (you’ll know it when you hear it, it’s loud and annoying), that means the batteries are low and need to be changed. Change them right away as it will stop functioning correctly if you don’t.</p>
+      }
+    },
+    'Video Tutorial': {
+      14: {
+        actionType: ActionType.Read,
+        content: <p>If you prefer videos over text instruction, you can follow this link to see a video of how to set up a Romi. If you prefer to follow a list of steps, or are unclear about any part of the video, you can follow the text steps outlined below. Video: <a href='https://www.youtube.com/watch?v=mop51tpWWcA' target='_blank'>https://www.youtube.com/watch?v=mop51tpWWcA</a></p>
+      }
+    },
+    'Step 1 – Installing VSCode and the WPILib': {
+      15: {
+        actionType: ActionType.Read,
+        content: <p>Programming the Romi is done using a library known as “WPILib”. WPILib is built into an installation of an application called “VSCode”, which is what you will use to write and deploy code to the Romi. There is documentation for the WPILib which includes guides on how to get started. To begin, follow the guide linked in the next screen to download VSCode. Note that the VSCode download and the Romi images are 1-2 gigabytes each and may take a few minutes to download.</p>
+      },
+      16: {
+        actionType: ActionType.Code,
+        content: <p>1. Start by opening this link: <a href='https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilibsetup.html' target='_blank'>https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilibsetup.html</a> You’ll be using Java.</p>
+      },
+      17: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_17.png'/>,
+        content: <p>2. There will be a link to GitHub which you need to follow:</p>
+      }
+    }
   },
   'Lesson 2 - Intro to Java - Variables': {
     'totalParagraphs': 20,
