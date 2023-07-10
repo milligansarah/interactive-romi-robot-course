@@ -3,7 +3,7 @@ import ActionType from "./Types/ActionTypeEnum";
 
 const data : CourseData = {
   'Lesson 1 - Getting Started': {
-    'totalParagraphs': 20,
+    'totalParagraphs': 18,
     'Introduction': {
       0: {
         actionType: ActionType.Read,
