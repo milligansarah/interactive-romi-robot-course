@@ -33,9 +33,9 @@ function ProgressBarComponent(props: ProgressBarProps) {
 
     return (
       <div id='progressBarContainer'>
-        <a href={getBackLink()} style={{color: 'black'}}><ChevronLeft/></a>
-        <ProgressBar className='progressBar' labelSize='10px' completed={calculateProgressPercent()} bgColor='black'/>
-        <a href={getNextLink()} style={{color: 'black'}}><ChevronRight/></a>
+        <a href={getBackLink()} style={{color: 'black'}}><ChevronLeft style={{fontSize: 50}}/></a>
+        <ProgressBar className='progressBar' height='30px' labelSize='10px' completed={calculateProgressPercent()} bgColor='black'/>
+        <a href={getNextLink()} style={{color: 'black'}}><ChevronRight style={{fontSize: 50}}/></a>
       </div>
     );
 }
