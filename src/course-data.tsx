@@ -3,7 +3,7 @@ import ActionType from "./Types/ActionTypeEnum";
 
 const data : CourseData = {
   'Lesson 1 - Getting Started': {
-    'totalParagraphs': 18,
+    'totalParagraphs': 45,
     'Introduction': {
       0: {
         actionType: ActionType.Read,
@@ -88,6 +88,133 @@ const data : CourseData = {
         actionType: ActionType.Code,
         image: <img src='./images/lesson1_17.png'/>,
         content: <p>2. There will be a link to GitHub which you need to follow:</p>
+      },
+      18: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_18.png'/>,
+        content: <p>3. Once on GitHub, the actual downloads are at the bottom of the page; you’ll need to select the proper one based on which operating system you’re using (Windows, Mac, or Linux) and whether your system is 32-bit or 64-bit. You don’t need to read any of the other text on this page, you just need to find the right download. If you’re on Windows and unsure which one to download, look at sub-point on the next screen.</p>
+      },
+      19: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_19.png'/>,
+        content: <p>On a Windows computer, if you are unsure of whether it’s 32- or 64-bit, press the Windows key (or click on the start menu), type “This PC” or “Computer”, and click the “Properties” link that appears in the search menu. Then, in the “System” section, look at the “System type” field, which will tell you if your system is 32- or 64-bit.</p>
+      },
+      20: {
+        actionType: ActionType.Code,
+        content: <p>4. Once you have the right file downloaded from GitHub, go back to the WPILib documentation using the same link as before: <a href='https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html'>https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html</a></p>
+      },
+      21: {
+        actionType: ActionType.Code,
+        content: <p>5. In the documentation, follow all the steps on the page, starting with the “Extracting the Installer” step. There are images to guide you. If you are unsure what options to choose at any point through the setup, follow the default recommendations that the documentation gives you. If you’re unsure about “Install for this User” or “Install for all Users”, you can choose “Install for this User”.</p>
+      },
+      22: {
+        actionType: ActionType.Read,
+        content: <p>6. Partway through the page you’ll notice a green warning similar to the one pictured below. If this is your first time installing VSCode, you probably don’t need to worry about this warning  too much, but if for any reason you have a version of VSCode installed your computer already, pay attention to this. Only the new version that you’re installing will work – any prior installation will NOT work, even if it was done for a robotics team.</p>
+      },
+      23: {
+        actionType: ActionType.Read,
+        content: <p>7. Make sure to read through the page thoroughly while you follow the steps. It is easy to make a mistake, but if you do follow the steps exactly, it will work. If it does not work, you can attempt to backtrack and see what step you missed. Starting over from scratch can sometimes be an easier option as well.</p>
+      }
+    },
+    'Step 2 – Setting Up Your Romi': {
+      24: {
+        actionType: ActionType.Read,
+        content: <p>To set up your Romi, you need to download and install firmware on it. You can think of firmware as kind of like an operating system for the Romi. It needs to have firmware installed in order to execute the programs that you write. There are a lot of details in the documentation during this section, but you don’t need to read all of them. Follow the steps listed here to successfully install the firmware and configure your robot for use.</p>
+      },
+      25: {
+        actionType: ActionType.Code,
+        content: <p>1. Start by following this link: <a href='https://docs.wpilib.org/en/stable/docs/romi-robot/index.html'>https://docs.wpilib.org/en/stable/docs/romi-robot/index.html</a> You don’t actually need to read the information on this page, but keep this link as a reference because if you want to do more advanced things with the Romi after reading through this course, you can refer back to it.</p>
+      },
+      26: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_26.png'/>,
+        content: <p>2. On the page linked above, click the “Next” button in the bottom-right corner.</p>
+      },
+      27: {
+        actionType: ActionType.Robot,
+        content: <p>3. You’ll now be on a page describing how to assemble the Romi. If your Romi is not assembled, follow all the steps here. If your Romi came pre-assembled, you can immediately scroll to the  bottom and click next.</p>
+      },
+      28: {
+        actionType: ActionType.Read,
+        content: <p>4. The next page is titled “Imaging your Romi”. This page is important for ALL users, regardless of whether your Romi came pre-assembled. The first think you’ll need to do is download the 
+        RomiWPILibPi image. The steps to do this are a little confusing so follow closely:</p>
+      },
+      29: {
+        actionType: ActionType.Read,
+        content: <p><strong>Note: </strong>this portion of lesson 1 (subpoints of step 4) is currently not available on the interactive course but will be by the end of July 2023. Please refer to the <a href='https://github.com/czbeatty/FRC-Romi-Programming-Course/'>PDF course</a> for now</p>
+      },
+    },
+    'Part 2 - Running Your First Program': {
+      30: {
+        actionType: ActionType.Code,
+        content: <p>Navigate to this page in your browser: <a href='https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html'>https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html</a> and open VSCode. Make sure you’re connected to your Romi through your wifi network.</p>
+      },
+      31: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_31.png'/>,
+        content: <p>Follow the steps in the linked page all the way to the end. There are a couple items that you’ll need to specify that are not covered by the linked page. First, when it asks you to select a language, pick Java (as shown below). Head to the next screen on this interactive course before moving on.</p>
+      },
+      32: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_32.png'/>,
+        content: <p>For the “Base Folder” field, you can choose whatever you want in your filesystem, but it might be a good idea to create a folder called “Development” in an easy-accessible location, where you put all your Romi projects. For the project name, you can again enter whatever you want. “ExampleProgram” might be a good name for your first project. Leave the “Create a new folder?” checkbox checked. For “Team Number”, if you belong to an FRC team, you can enter your team’s number. If you do not, or you don’t know what an FRC team is, you can enter “0000”. Do not check the “Enable Desktop Support” checkbox. Pictured below is an example. When you're finished with this, head to the next screen on this interactive course.</p>
+      },
+      33: {
+        actionType: ActionType.Code,
+        content: <p>Back on the “Programming the Romi” webpage, you can ignore the paragraph right near the end that says “If you changed the Romi network settings...”. This means the last thing you’ll do in the instructions is press F5, which will deploy the example project. Go ahead and do this! If when you press F5 you get any sort of build error (you will see red text near the bottom of your screen saying build failed), try rebooting VSCode and your Romi, re-connecting to your Romi’s wifi (remember that will take a minute for the wifi network to pop up), and deploying again. Sometimes VSCode will fail to contact the Romi even if there is nothing wrong with your code, but rebooting solves this.</p>
+      },
+      34: {
+        actionType: ActionType.Search,
+        image: <img src='./images/lesson1_34.png'/>,
+        content: <p>After you deploy your code, VSCode will bring up a new interface (called the “Robot Simulation” interface) that looks something like this. Note 1: Sometimes the Robot Simulation window will not open the first time you press F5. If this happens to you, simply click the red square to end your program, and press F5 again.</p>
+      },
+      35: {
+        actionType: ActionType.Search,
+        image: <img src='./images/lesson1_35.png'/>,
+        content: <p>Note 2: If you have the FRC Driver Station application installed on your computer, you may not see the Robot State box in the upper left of the image below. Instead, you will use the FRC Driver Station app to enable/disable your robot and select modes. If you don’t know what the FRC Driver Station is, don’t worry about this note.</p>
+      },
+      36: {
+        actionType: ActionType.Code,
+        content: <p>This interface lets you control the Romi and see various output from the onboard sensors. But what we’re most interested in right now is making it move. The simplest way to do this with the sample program is to enable its autonomous program. Enabling the autonomous program will cause the Romi to drive forward about ten inches, turn around, drive back to its original location, and then turn around again. Make sure you have the Romi somewhere where it can safely do this (not at the edge of a desk or table) and be ready to enable it. Look at the photo above, and find the “Robot State” box, in the upper left, highlighted in green. Here you will see a list of four robot states – Disabled, Autonomous, Teleoperated, and Test. As soon as you click Autonomous, the Romi will enable and immediately begin its autonomous routine. When you’re ready, give it a try! After the Romi finishes moving, click the Disabled option to disable it again. Although the Romi is lightweight and low power, making sure robots are disabled when not in direct use is a critical safety practice.</p>
+      },
+      37: {
+        actionType: ActionType.Code,
+        content: <p>Now that you’ve made the Romi move on its own, it’s time to try driving it yourself. If you look at the window called “System Joysticks”, highlighted in red, you will see any joysticks that you have plugged in to your computer. In the example, there is an Xbox controller plugged in, but you can use anything that your computer recognizes as a joystick. There’s an additional window called simply “Joysticks”, highlighted in yellow, and these are the joysticks that your code and Romi are looking at for input. You may not see any joysticks listed in this window. If that is the case, you can simply drag and drop your joysticks from the System Joysticks window, to the Joysticks window. In the example photo, the Xbox Controller has been dragged to joystick 0. Do likewise – drag whatever joystick you want to use as your controller to the 0 slot. If you have multiple joysticks plugged in to your computer, you may need to do some quick tests to figure out which one is which. How to do this is explained next.</p>
+      },
+      38: {
+        actionType: ActionType.Search,
+        content: <p>After dragging your joystick so the Joysticks window, try moving your joystick around and pressing some buttons. You will see the yellow squares at the bottom of the Joysticks window fill/unfill as you press and release buttons, and you can see the axis values change in value as you move the sticks around. This is how you can test which joystick in the System Joysticks is which if you are not sure. If you have one joystick dragged to the joysticks window and pressing buttons/moving the sticks doesn’t change any of the values, you probably dragged a different stick.</p>
+      },
+      39: {
+        actionType: ActionType.Code,
+        content: <p>Once you’ve gotten your joystick to register, and you’ve confirmed it’s in the Joystick[0] slot, you’re ready to enable your robot! Look back at the robot state box, and when you’re ready, click Teleoperated. This will enable the robot. Now you can start trying to drive it around! If you press various buttons and/or sticks on your joystick/controller, you should be able to make the robot move. However, it may or may not control as you expect. For example, by default, if you’re using an Xbox controller, the left joystick will control the robot moving forward and backward, but the left trigger will control turning, and you’ll only be able to turn it one direction since the left trigger can only register positive values (as opposed to a joystick, which can register positive or negative values, e.g. if you push it forward or backward.) Now disable the robot. Your first task for you to start programming will be to fix the controls so it can drive normally. If your robot does drive as expected, which could happen for some controllers, then you can still follow the lesson. You’ll simply change it to drive abnormally, and then fix it again.</p>
+      }
+    },
+    'Ending the Executing Program': {
+      40: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_40.png'/>,
+        content: <p>After you press deploy your code, a small box with a few buttons will pop up in the top of VSCode. While this box is visible, you may not be able to deploy additional code to the Romi – VSCode may give you an error. When you want to deploy new code, simply click the red square in this box first, and then you can deploy your code:</p>
+      }
+    },
+    'Fixing the Controls': {
+      41: {
+        actionType: ActionType.Search,
+        content: <p>As discussed above, you can look at the robot simulation interface, and see changes in the joystick section as you move the joysticks or press buttons. Decide which joystick axis you want to control turning. For example if you’re using an Xbox controller, this might be the left joystick being pushed left or right, or the right joystick being pushed left or right. If you’re using a single standalone joystick, you don’t have as many options. But either way, decide what you want, and then start pushing the joystick that way. On the joysticks interface you will see a value change. For example, it might move from 0 to 1 or -1 depending on which direction you push it. The important thing here is to note which axis is changing. The axes are labeled from 0 to 5 in brackets, like so: Axis[4]. Determine which axis is changing, and remember this number.</p>
+      },
+      42: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_42.png'/>,
+        content: <p>Now let’s dig into the code. Back in VSCode, open the “Explorer” (highlighted in red, upper left, see the picture below) and then click on src, java, frc, robot, and then finally double click on RobotContainer.java to open it.</p>
+      },
+      43: {
+        actionType: ActionType.Search,
+        image: <img src='./images/lesson1_43.png'/>,
+        content: <p>If you’re brand new to programming, there is a lot to take in here – but don’t worry about that. We’ll discuss everything in time, but for now let’s get those controls fixed. Scroll down in RobotContainer.java until you see line number 95. The lines are numbered on the left side of the code. On line 95, you’ll see this:</p>
+      },
+      44: {
+        actionType: ActionType.Code,
+        content: <p>At the end of the line, you’ll see “m_controller.getRawAxis(2))”, highlighted in red above. This line sets which axes of the joystick are being used to control the robot. Change the 2 to whatever axis you identified when testing the controls. If your controls were already correct, try changing it to something else, following the next step, and then changing it back. Once you do this, you can press ctrl+s to save, and F5 to deploy your code to the Romi again. Once the code finishes deploying, you can enable it again and try out your new controls. If you put the right axis, you’ll be able to drive your robot comfortably! If the controls aren’t what you expected, double check your axes again when you push on them using the joysticks interface, and make sure you changed the correct value in the code. Now that you have your Romi driving around, have some fun with it! You’ve taken your first steps into writing code and you already have a robot driving around.</p>
       }
     }
   },
