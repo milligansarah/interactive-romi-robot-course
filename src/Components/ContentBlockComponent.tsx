@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import './ContentBlockComponent.css';
-import { QuestionMark, Search, Notes, Keyboard, ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { QuestionMark, Search, Notes, Keyboard } from '@mui/icons-material';
 import ProgressBarComponent from './ProgressBarComponent';
 import SideNavigationComponent from './SideNavigationComponent';
 import ActionType from '../Types/ActionTypeEnum';

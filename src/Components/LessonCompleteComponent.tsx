@@ -1,6 +1,6 @@
 import ProgressBarComponent from "./ProgressBarComponent";
-import './LessonCompleteComponent.css';
 import SideNavigationComponent from "./SideNavigationComponent";
+import './LessonCompleteComponent.css';
 
 interface LessonCompleteProps {
     'lessonCompleted': number
