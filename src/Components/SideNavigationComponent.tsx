@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom';
 import './SideNavigationComponent.css';
 import { Close, Menu } from '@mui/icons-material';
 import { ReactElement, useState } from 'react';
 import CourseData from '../course-data';
+// Data types used to represent course data in `course-data.tsx`
 import CourseDataType from '../Types/CourseDataType';
 import contentBlock from '../Types/ContentBlockType';
 import subHeading from '../Types/SubHeadingType';
