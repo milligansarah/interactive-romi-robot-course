@@ -1,8 +1,8 @@
-import contentBlock from './ContentBlockType';
 import subHeading from './SubHeadingType';
 
 type LessonData = {
-    [indexOrSubHeadingOrParagraphCount: string]: contentBlock | subHeading | number;
+    // TODO: define required keys more clearly
+    [subheadingOrTotalParagraphs: string]: subHeading | number;
 }
 
 export default LessonData;

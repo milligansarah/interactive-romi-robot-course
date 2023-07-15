@@ -3,15 +3,17 @@ import ActionType from "./Types/ActionTypeEnum";
 
 const data : CourseData = {
   'Lesson 1 - Getting Started': {
-
+    totalParagraphs: 0,
   },
   'Lesson 2 - Intro to Java - Variables': {
     'totalParagraphs': 20,
-    0: {
-      actionType: ActionType.Read,
-      content: <p>In Lesson 1, you got your Romi driving around and made a small code change. In this lesson,
-      we’ll talk a little bit about Java as a programming language so you can start to make sense of all the
-      folders and files you see in VSCode.</p>
+    'Introduction': {
+      0: {
+        actionType: ActionType.Read,
+        content: <p>In Lesson 1, you got your Romi driving around and made a small code change. In this lesson,
+        we’ll talk a little bit about Java as a programming language so you can start to make sense of all the
+        folders and files you see in VSCode.</p>
+      }
     },
     'Printing Output': {
       1: {
@@ -109,9 +111,11 @@ const data : CourseData = {
   },
   'Lesson 3 - Methods, Classes, and Objects': {
     'totalParagraphs': 22,
-    0: {
-      content: <p>In Lesson 2 you learned what methods are, but we only scratched the surface. In this lesson we’ll introduce two more critical concepts – classes and objects. We’ll learn how to utilize the buttons on your joystick and make the on-board lights on the Romi turn on and off. Start off by creating a new RomiReference project called “Lights”.</p>,
-      actionType: ActionType.Code,
+    'Introduction': {
+      0: {
+        content: <p>In Lesson 2 you learned what methods are, but we only scratched the surface. In this lesson we’ll introduce two more critical concepts – classes and objects. We’ll learn how to utilize the buttons on your joystick and make the on-board lights on the Romi turn on and off. Start off by creating a new RomiReference project called “Lights”.</p>,
+        actionType: ActionType.Code,
+      }
     },
     'Classes & Objects': {
       1: {
@@ -219,9 +223,11 @@ const data : CourseData = {
   },
   'Lesson 4 - Methods Deep Dive': {
     'totalParagraphs': 15,
-    0: {
-      content: <p>Over the past two lessons you’ve learned what methods are and used them, but you’ve probably noticed a lot of things that you don’t understand about them. In this lesson we’re going to start building your understanding. Remember, methods are basically self-contained chunks of code that can be called in some other location, so the code doesn't need to be repeated. There are built-in methods (for example System.out.println) and you can also write your own methods. To do this lesson, we’re going to want a clean workspace in VSCode that doesn’t interact with the Romi, so we can write some basic methods and run them without needing to connect to the robot. Then in the next lesson we’ll switch back to working with the Romi and you’ll write some code that gives the Romi a slightly different control scheme while you hold down a button.</p>,
-      actionType: ActionType.Read,
+    'Introduction': {
+      0: {
+        content: <p>Over the past two lessons you’ve learned what methods are and used them, but you’ve probably noticed a lot of things that you don’t understand about them. In this lesson we’re going to start building your understanding. Remember, methods are basically self-contained chunks of code that can be called in some other location, so the code doesn't need to be repeated. There are built-in methods (for example System.out.println) and you can also write your own methods. To do this lesson, we’re going to want a clean workspace in VSCode that doesn’t interact with the Romi, so we can write some basic methods and run them without needing to connect to the robot. Then in the next lesson we’ll switch back to working with the Romi and you’ll write some code that gives the Romi a slightly different control scheme while you hold down a button.</p>,
+        actionType: ActionType.Read,
+      }
     },
     'Setting Up a New Workspace': {
       1: {
