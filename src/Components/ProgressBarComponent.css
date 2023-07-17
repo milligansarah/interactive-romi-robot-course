@@ -13,3 +13,11 @@
 .progressBar {
     flex-grow: 1;
 }
+
+#progressBarContainer > a {
+    color: black;
+}
+
+#progressBarContainer > a > * {
+    font-size: 50px;
+}
