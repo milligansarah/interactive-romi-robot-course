@@ -36,3 +36,7 @@
     font-size: 18px;
     font-weight: normal;
 }
+
+img {
+    max-width: 100%;
+}
