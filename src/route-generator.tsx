@@ -19,41 +19,22 @@ export default function generateRoutes(data: CourseDataType) : ReactElement {
       const lessonNumber : number = Number(lessonKey.split(' ')[1]);
       const lessonTitle : string = lessonKey.split(' - ')[1];
       for (const key in currentLessonObject) {
-        // Check if the key is numeric, which would indicate a content block
-        if (!isNaN(Number(key))) {
-          const thisContentBlock = currentLessonObject[key] as contentBlock;
+        // Iterate through each content block in the subheading
+        const currentSubheadingObject = currentLessonObject[key] as subHeading;
+        for (const contentBlockKey in currentSubheadingObject) {
+          const thisContentBlock = currentSubheadingObject[contentBlockKey] as contentBlock;
           currentLessonBlockRoutesList.push(
-            <Route path={key} element=
+            <Route path={contentBlockKey} element=
               {
-                <ContentBlockComponent lessonTitle={lessonTitle} lesson={lessonNumber} totalParagraphs={totalParagraphs} paragraphIndex={Number(key)} actionType={thisContentBlock['actionType']} content={
+                <ContentBlockComponent lessonTitle={lessonTitle} subHeading={key} lesson={lessonNumber} totalParagraphs={totalParagraphs} paragraphIndex={Number(contentBlockKey)} actionType={thisContentBlock['actionType']} content={
                   <div>
-                    {thisContentBlock['content']},
-                    {thisContentBlock['image']}
+                    {thisContentBlock['content']}
+                    {thisContentBlock['image']!}
                   </div>
                 } />
               }>
             </Route>
           );
-        }
-        // In this case, the object is a subheading
-        else {
-          // Iterate through each content block in the subheading
-          const currentSubheadingObject = currentLessonObject[key] as subHeading;
-          for (const contentBlockKey in currentSubheadingObject) {
-            const thisContentBlock = currentSubheadingObject[contentBlockKey] as contentBlock;
-            currentLessonBlockRoutesList.push(
-              <Route path={contentBlockKey} element=
-                {
-                  <ContentBlockComponent lessonTitle={lessonTitle} subHeading={key} lesson={lessonNumber} totalParagraphs={totalParagraphs} paragraphIndex={Number(contentBlockKey)} actionType={thisContentBlock['actionType']} content={
-                    <div>
-                      {thisContentBlock['content']}
-                      {thisContentBlock['image']!}
-                    </div>
-                  } />
-                }>
-              </Route>
-            );
-          }
         }
       }
       currentLessonBlockRoutesList.push(<Route path='complete' element={<LessonCompleteComponent totalParagraphs={totalParagraphs} lessonCompleted={lessonNumber}/>}></Route>)

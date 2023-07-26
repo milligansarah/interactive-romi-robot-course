@@ -19,12 +19,7 @@ function SideNavigationComponent(props: SideNavigationProps) {
             menuItems.push(<h1 id={'lesson-' + lessonNumber + '-heading'} style={{fontSize: 20, width: 'calc(100% - 20px)'}}>{lessonKey}</h1>)
             const currentLessonObject = data[lessonKey];
             for (const key in currentLessonObject) {
-                // If the key is numeric
-                if (!isNaN(Number(key))) {
-                    const thisContentBlock = currentLessonObject[key] as contentBlock;
-                    menuItems.push(<a style={{display: 'inline-block', textOverflow: 'ellipsis', width: 'calc(100% - 40px)', marginLeft: 20, marginTop: 0, marginBottom: 0, overflow: 'hidden', whiteSpace: 'nowrap', color: 'black', maxHeight: 50}} href={'#/lesson-' + lessonNumber + '/' + key}><p>{thisContentBlock['content']}</p></a>);
-                }
-                else if (key !== 'totalParagraphs') {
+                if (key !== 'totalParagraphs') {
                     const thisSubHeading = currentLessonObject[key] as subHeading;
                     menuItems.push(<p style={{color: 'cadetblue', fontSize: 18, marginLeft: 20, marginTop: 0, marginBottom: 0}}>{key}</p>);
                     for (const contentBlockKey in thisSubHeading) {
