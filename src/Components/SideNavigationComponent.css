@@ -54,3 +54,21 @@
     border: none;
     cursor: pointer;
 }
+
+.Collapsible__trigger {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Collapsible__trigger:hover {
+    cursor: pointer;
+}
+
+.Collapsible {
+    margin-bottom: 20px;
+    width: calc(100% - 20px);
+}
+
+.Collapsible__contentInner {
+    margin-top: 10px;
+}
