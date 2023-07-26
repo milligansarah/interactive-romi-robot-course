@@ -1,7 +1,8 @@
 enum ActionType {
     Code,
     Read,
-    Search
+    Search,
+    Robot,
 }
 
 export default ActionType;
