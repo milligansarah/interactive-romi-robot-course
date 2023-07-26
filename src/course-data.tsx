@@ -533,9 +533,11 @@ const data : CourseData = {
   },
   'Lesson 5 - If Statements & Cut-Power Mode': {
     'totalParagraphs': 21,
-    0: {
-      actionType: ActionType.Read,
-      content: <p>In this lesson you’ll learn a critical new concept in programming known as conditionals, or if statements. You use if statements to create conditional logic in your code, for example “if something is true, do something, otherwise do something else”. You’ll then do a project where you use your new knowledge to give yourself some additional control over your robot so you can perform tricky driving maneuvers more easily.</p>
+    'Introduction': {
+      0: {
+        actionType: ActionType.Read,
+        content: <p>In this lesson you’ll learn a critical new concept in programming known as conditionals, or if statements. You use if statements to create conditional logic in your code, for example “if something is true, do something, otherwise do something else”. You’ll then do a project where you use your new knowledge to give yourself some additional control over your robot so you can perform tricky driving maneuvers more easily.</p>
+      },
     },
     'If Statements': {
       1: {
