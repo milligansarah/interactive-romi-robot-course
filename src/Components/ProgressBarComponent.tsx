@@ -9,6 +9,7 @@ interface ProgressBarProps {
 }
 
 function ProgressBarComponent(props: ProgressBarProps) {
+    console.log(props.paragraphIndex + ' total Pragraphs: ' + props.totalParagraphs + ' current lesson: ' + props.currentLesson);
     function getBackLink() : string {
       if (props.paragraphIndex == 0) {
         return '#/lesson-' + (props.currentLesson - 1) + '/complete';
