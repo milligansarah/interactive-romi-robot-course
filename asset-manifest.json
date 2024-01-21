@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/interactive-romi-robot-course/static/css/main.aa4ccd03.css",
-    "main.js": "/interactive-romi-robot-course/static/js/main.ccdc8d1e.js",
+    "main.js": "/interactive-romi-robot-course/static/js/main.833771ba.js",
     "index.html": "/interactive-romi-robot-course/index.html",
     "main.aa4ccd03.css.map": "/interactive-romi-robot-course/static/css/main.aa4ccd03.css.map",
-    "main.ccdc8d1e.js.map": "/interactive-romi-robot-course/static/js/main.ccdc8d1e.js.map"
+    "main.833771ba.js.map": "/interactive-romi-robot-course/static/js/main.833771ba.js.map"
   },
   "entrypoints": [
     "static/css/main.aa4ccd03.css",
-    "static/js/main.ccdc8d1e.js"
+    "static/js/main.833771ba.js"
   ]
 }
