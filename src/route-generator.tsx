@@ -15,7 +15,7 @@ export default function generateRoutes(data: CourseDataType) : ReactElement {
     for (const lessonKey in data) {
       const currentLessonObject = data[lessonKey];
       const currentLessonBlockRoutesList : ReactElement[] = [];
-      let totalParagraphs : number = data[lessonKey]['totalParagraphs'] as number;
+      const totalParagraphs : number = data[lessonKey]['totalParagraphs'] as number;
       const lessonNumber : number = Number(lessonKey.split(' ')[1]);
       const lessonTitle : string = lessonKey.split(' - ')[1];
       for (const key in currentLessonObject) {
@@ -30,6 +30,7 @@ export default function generateRoutes(data: CourseDataType) : ReactElement {
                   <div>
                     {thisContentBlock['content']}
                     {thisContentBlock['image']!}
+                    {thisContentBlock['more_images']!}
                   </div>
                 } />
               }>

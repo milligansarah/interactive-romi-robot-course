@@ -1,5 +1,6 @@
 #contentBlock {
     gap: 15px;
+    height: 50%;
 }
 
 #contentBlock > * {

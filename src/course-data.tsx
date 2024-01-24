@@ -1,9 +1,12 @@
 import CourseData from "./Types/CourseDataType"
 import ActionType from "./Types/ActionTypeEnum";
+import format_raw_processed_data_to_course_data from "./format_raw_data_to_course_data";
 
-const data : CourseData = {
+const generated_data: CourseData = format_raw_processed_data_to_course_data();
+
+const data: CourseData = {
   'Lesson 1 - Getting Started': {
-    'totalParagraphs': 45,
+    'totalParagraphs': 62,
     'Introduction': {
       0: {
         actionType: ActionType.Read,
@@ -61,7 +64,7 @@ const data : CourseData = {
     'Turning your Romi On and Off & the Low Battery Signal': {
       12: {
         actionType: ActionType.Robot,
-        image: <img src='./images/lesson1_12.png'/>,
+        image: <img src='./images/lesson1_12.png' />,
         content: <p>The Romi has two power switches – one is a switch, and one is just a button. To turn it on, you simply have to flip the switch to the “On” position. But to turn it off, you have to flip the switch to “Off” and then push the power button. If you don’t do this, the Romi will remain on and eventually drain its batteries, so make sure you fully turn it off whenever you’re not using it.</p>
       },
       13: {
@@ -86,17 +89,17 @@ const data : CourseData = {
       },
       17: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_17.png'/>,
+        image: <img src='./images/lesson1_17.png' />,
         content: <p>2. There will be a link to GitHub which you need to follow:</p>
       },
       18: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_18.png'/>,
+        image: <img src='./images/lesson1_18.png' />,
         content: <p>3. Once on GitHub, the actual downloads are at the bottom of the page; you’ll need to select the proper one based on which operating system you’re using (Windows, Mac, or Linux) and whether your system is 32-bit or 64-bit. You don’t need to read any of the other text on this page, you just need to find the right download. If you’re on Windows and unsure which one to download, look at sub-point on the next screen.</p>
       },
       19: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_19.png'/>,
+        image: <img src='./images/lesson1_19.png' />,
         content: <p>On a Windows computer, if you are unsure of whether it’s 32- or 64-bit, press the Windows key (or click on the start menu), type “This PC” or “Computer”, and click the “Properties” link that appears in the search menu. Then, in the “System” section, look at the “System type” field, which will tell you if your system is 32- or 64-bit.</p>
       },
       20: {
@@ -127,7 +130,7 @@ const data : CourseData = {
       },
       26: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_26.png'/>,
+        image: <img src='./images/lesson1_26.png' />,
         content: <p>2. On the page linked above, click the “Next” button in the bottom-right corner.</p>
       },
       27: {
@@ -136,83 +139,162 @@ const data : CourseData = {
       },
       28: {
         actionType: ActionType.Read,
-        content: <p>4. The next page is titled “Imaging your Romi”. This page is important for ALL users, regardless of whether your Romi came pre-assembled. The first think you’ll need to do is download the 
-        RomiWPILibPi image. The steps to do this are a little confusing so follow closely:</p>
+        content: <p>4. The next page is titled “Imaging your Romi”. This page is important for ALL users, regardless of whether your Romi came pre-assembled. The first think you’ll need to do is download the
+          RomiWPILibPi image. The steps to do this are a little confusing so follow closely:</p>
       },
       29: {
-        actionType: ActionType.Read,
-        content: <p><strong>Note: </strong>this portion of lesson 1 (subpoints of step 4) is currently not available on the interactive course but will be by the end of July 2023. Please refer to the <a href='https://github.com/czbeatty/FRC-Romi-Programming-Course/'>PDF course</a> for now</p>
+        actionType: ActionType.Code,
+        content: <p>4a. Click on the “Romi WPILibPi” link which takes you to a GitHub page:</p>,
+        image: <img src='./images/lesson1_4a.png' />
       },
-    },
-    'Part 2 - Running Your First Program': {
       30: {
         actionType: ActionType.Code,
-        content: <p>Navigate to this page in your browser: <a href='https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html'>https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html</a> and open VSCode. Make sure you’re connected to your Romi through your wifi network.</p>
+        content: <p>4b. There will be a large link on the top of this page that looks similar to the image below, although the exact numbers and dates may have changed relative to the image. <strong>Make sure you’re at the top of the page and that you did not scroll down.</strong> Before clicking on this link, look at the scrollbar in the upper right corner of your browser – it should be quite small. After looking at it and visualizing how large it is, click the big WPILibPi link. <strong>It may appear as though nothing on your screen has changed.</strong></p>,
+        image: <img src='./images/lesson1_4b.png' />
       },
       31: {
-        actionType: ActionType.Code,
-        image: <img src='./images/lesson1_31.png'/>,
-        content: <p>Follow the steps in the linked page all the way to the end. There are a couple items that you’ll need to specify that are not covered by the linked page. First, when it asks you to select a language, pick Java (as shown below). Head to the next screen on this interactive course before moving on.</p>
+        actionType: ActionType.Search,
+        content: <p>4c. After clicking on the link, check your scrollbar again. It should now be larger.</p>,
+        image: <img src='./images/lesson1_4c.png' />
       },
       32: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_32.png'/>,
-        content: <p>For the “Base Folder” field, you can choose whatever you want in your filesystem, but it might be a good idea to create a folder called “Development” in an easy-accessible location, where you put all your Romi projects. For the project name, you can again enter whatever you want. “ExampleProgram” might be a good name for your first project. Leave the “Create a new folder?” checkbox checked. For “Team Number”, if you belong to an FRC team, you can enter your team’s number. If you do not, or you don’t know what an FRC team is, you can enter “0000”. Do not check the “Enable Desktop Support” checkbox. Pictured below is an example. When you're finished with this, head to the next screen on this interactive course.</p>
+        content: <p>4d. If the scrollbar grew in size <strong>and</strong> the WPILibPi link stayed the same, you’re on the right path. If the numbers in the WPILibPi link changed after you clicked the link, then go back and make sure you’re scrolled to the top of the page before you click the link. But if it stayed the same, you’re good to go. Now scroll down to the bottom of this page and you’ll see a list of files. Click the WPILibPi_image file that is suffixed with “-Romi”. Again, the numbers may be slightly different on your screen, compared to the image below:</p>,
+        image: <img src='./images/lesson1_4d.png' />
       },
       33: {
         actionType: ActionType.Code,
-        content: <p>Back on the “Programming the Romi” webpage, you can ignore the paragraph right near the end that says “If you changed the Romi network settings...”. This means the last thing you’ll do in the instructions is press F5, which will deploy the example project. Go ahead and do this! If when you press F5 you get any sort of build error (you will see red text near the bottom of your screen saying build failed), try rebooting VSCode and your Romi, re-connecting to your Romi’s wifi (remember that will take a minute for the wifi network to pop up), and deploying again. Sometimes VSCode will fail to contact the Romi even if there is nothing wrong with your code, but rebooting solves this.</p>
+        content: <p>4e. Once you’ve downloaded this zip file, go back to the WPILib documentation, on the page called “Imaging your Romi”: <a href='https://docs.wpilib.org/en/stable/docs/romirobot/imaging-romi.html'>https://docs.wpilib.org/en/stable/docs/romirobot/imaging-romi.html</a></p>,
       },
       34: {
-        actionType: ActionType.Search,
-        image: <img src='./images/lesson1_34.png'/>,
-        content: <p>After you deploy your code, VSCode will bring up a new interface (called the “Robot Simulation” interface) that looks something like this. Note 1: Sometimes the Robot Simulation window will not open the first time you press F5. If this happens to you, simply click the red square to end your program, and press F5 again.</p>
+        actionType: ActionType.Code,
+        content: <p>4f. Under the heading “Imaging”, there is a link for a WPILibPi Installation guide. Click that link:</p>,
+        image: <img src='./images/lesson1_4f.png' />
       },
       35: {
-        actionType: ActionType.Search,
-        image: <img src='./images/lesson1_35.png'/>,
-        content: <p>Note 2: If you have the FRC Driver Station application installed on your computer, you may not see the Robot State box in the upper left of the image below. Instead, you will use the FRC Driver Station app to enable/disable your robot and select modes. If you don’t know what the FRC Driver Station is, don’t worry about this note.</p>
+        actionType: ActionType.Code,
+        content: <p>4g. On this new page, you can ignore the first link to a WPILibPi repository – that’s where you just were, and what you just downloaded. Read through the instructions and you’ll get to the heading “Copy the image to your MicroSD card”. Then you’ll see a link to installing a program called Etcher. Follow that link:</p>,
+        image: <img src='./images/lesson1_4g.png' />
       },
       36: {
         actionType: ActionType.Code,
-        content: <p>This interface lets you control the Romi and see various output from the onboard sensors. But what we’re most interested in right now is making it move. The simplest way to do this with the sample program is to enable its autonomous program. Enabling the autonomous program will cause the Romi to drive forward about ten inches, turn around, drive back to its original location, and then turn around again. Make sure you have the Romi somewhere where it can safely do this (not at the edge of a desk or table) and be ready to enable it. Look at the photo above, and find the “Robot State” box, in the upper left, highlighted in green. Here you will see a list of four robot states – Disabled, Autonomous, Teleoperated, and Test. As soon as you click Autonomous, the Romi will enable and immediately begin its autonomous routine. When you’re ready, give it a try! After the Romi finishes moving, click the Disabled option to disable it again. Although the Romi is lightweight and low power, making sure robots are disabled when not in direct use is a critical safety practice.</p>
+        content: <p>4h. On this page, scroll down to the heading “Get your assets” and select the proper download for your operation system:</p>,
+        image: <img src='./images/lesson1_4h.png' />
       },
       37: {
         actionType: ActionType.Code,
-        content: <p>Now that you’ve made the Romi move on its own, it’s time to try driving it yourself. If you look at the window called “System Joysticks”, highlighted in red, you will see any joysticks that you have plugged in to your computer. In the example, there is an Xbox controller plugged in, but you can use anything that your computer recognizes as a joystick. There’s an additional window called simply “Joysticks”, highlighted in yellow, and these are the joysticks that your code and Romi are looking at for input. You may not see any joysticks listed in this window. If that is the case, you can simply drag and drop your joysticks from the System Joysticks window, to the Joysticks window. In the example photo, the Xbox Controller has been dragged to joystick 0. Do likewise – drag whatever joystick you want to use as your controller to the 0 slot. If you have multiple joysticks plugged in to your computer, you may need to do some quick tests to figure out which one is which. How to do this is explained next.</p>
+        content: <p>4i. When you’re done downloading Etcher, head back to the imaging page in the WPILib documentation: <a href='https://docs.wpilib.org/en/stable/docs/software/visionprocessing/wpilibpi/installing-the-image-to-your-microsd-card.html'>https://docs.wpilib.org/en/stable/docs/software/visionprocessing/wpilibpi/installing-the-image-to-your-microsd-card.html</a></p>,
       },
       38: {
+        actionType: ActionType.Code,
+        content: <p>4j. Follow the instructions on this page where you left. It explains how to flash the MicroSD card with the image using Etcher. Note how it states: “Expect the process to take about 3 minutes on a fairly fast laptop.” If the flashing process happens very quickly and does not take a couple minutes, it did not flash correctly, but Etcher may still say that the flash is complete. If this happens to you, double check that you selected your downloaded zip file (do NOT unzip it first), and check that you selected your MicroSD card as the target. When it flashes correctly, it will go through a few different phases. First, decompressing. Then it will pause for a moment. Then, flashing, then validating, then finishing, where again it will pause for a moment. You can refer to the images below – click “Flash from file”, select the zipped image, select the target as your SD card, wait for it to finish, and then it should show the “Flash Complete!” Message after flashing successfully.</p>,
+        image: <img src='./images/lesson1_4j.png' />
+      },
+      39: {
+        actionType: ActionType.Code,
+        content: <p>4k. After you’ve successfully flashed the SD card, head back to this page: <a href='https://docs.wpilib.org/en/stable/docs/software/vision-processing/wpilibpi/installingthe-image-to-your-microsd-card.html'>https://docs.wpilib.org/en/stable/docs/software/vision-processing/wpilibpi/installingthe-image-to-your-microsd-card.html</a> and scroll down to the bottom, to the “Testing the Raspberry PI” section, and continue following the steps.</p>,
+      },
+      40: {
+        actionType: ActionType.Code,
+        content: <p>4l. For step 2, plug an ethernet cable directly from your computer into the Romi and navigate to the URL provided.</p>,
+      },
+      41: {
+        actionType: ActionType.Code,
+        content: <p>4m. Finish completing the steps on this page and click “Next”.</p>,
+      },
+      42: {
+        actionType: ActionType.Code,
+        content: <p>4n. After clicking next, you get a long page with a lot of info. You can ignore a lot of this info, although you can read it if you’re interested. Read from the start of the page up until the “System status” heading, at which point you can stop if you want.</p>,
+      },
+      43: {
+        actionType: ActionType.Code,
+        content: <p>4o. In the web interface, navigate to “Network Settings”. Click “Writable” at the top. On this page, you can set the name of your Romi’s wifi network if you want to in the SSID field. You can also leave it as WPILibPi if you want to, but if you’re in a class or lab with other people you might want to choose something unique. You can also enter a wifi security code in the WPA2 Passphrase field if you want.</p>,
+      },
+      44: {
+        actionType: ActionType.Code,
+        content: <p>4p. Lastly, click on the Romi tab, scroll down to the “IMU Calibration” section, read the instructions (lay the Romi on a flat surface and don’t touch it while calibrating), and click “Calibrate Gyro”. When you’re done, click the “Read-Only” button at the top.</p>,
+        image: <img src='./images/lesson1_4p.png' />
+      },
+      45: {
+        actionType: ActionType.Code,
+        content: <p>4q. You’re now done with the network configuration. You can unplug the ethernet cable. Now you can connect to your Romi wirelessly the same way you would connect to any other wifi network on your computer. The network name will be whatever you set it to, or if you did not change it, it will be whichever network starts with “WPILibPi”. There are a couple things to note about connecting to the Romi over wifi. First, when you do so, you will disconnect from any other wifi networks you’re connected to, meaning you will probably lose internet access if you’re connected to your internet over wifi. You can maintain internet access and connect to the Romi at the same time if you connect to your internet with an ethernet cable, but if you’re not connecting to the internet with a cable, be prepared to lose access. Third, sometimes on Windows the network connection screen might look like the first image below while you are connected. If your screen sits with scrolling white dots, you’re probably connected after a few seconds. It might also say “No Internet” (second image), while in reality, you’re still connected to the Romi – you just don’t have access to the internet, because your Romi is just a robot, not a router that connects you to the outside world like you’re usually connected to with wifi.</p>,
+        image: <img src='./images/lesson1_4q.png' />,
+        more_images: <img src='./images/lesson1_4q1.png' />,
+      },
+      46: {
+        actionType: ActionType.Read,
+        content: <p>Congratulations! You’re finally done setting up your Romi. It’s time to make it move!</p>
+      }
+    },
+    'Part 2 - Running Your First Program': {
+      47: {
+        actionType: ActionType.Code,
+        content: <p>Navigate to this page in your browser: <a href='https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html'>https://docs.wpilib.org/en/stable/docs/romi-robot/programming-romi.html</a> and open VSCode. Make sure you’re connected to your Romi through your wifi network.</p>
+      },
+      48: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_31.png' />,
+        content: <p>Follow the steps in the linked page all the way to the end. There are a couple items that you’ll need to specify that are not covered by the linked page. First, when it asks you to select a language, pick Java (as shown below). Head to the next screen on this interactive course before moving on.</p>
+      },
+      49: {
+        actionType: ActionType.Code,
+        image: <img src='./images/lesson1_32.png' />,
+        content: <p>For the “Base Folder” field, you can choose whatever you want in your filesystem, but it might be a good idea to create a folder called “Development” in an easy-accessible location, where you put all your Romi projects. For the project name, you can again enter whatever you want. “ExampleProgram” might be a good name for your first project. Leave the “Create a new folder?” checkbox checked. For “Team Number”, if you belong to an FRC team, you can enter your team’s number. If you do not, or you don’t know what an FRC team is, you can enter “0000”. Do not check the “Enable Desktop Support” checkbox. Pictured below is an example. When you're finished with this, head to the next screen on this interactive course.</p>
+      },
+      50: {
+        actionType: ActionType.Code,
+        content: <p>Back on the “Programming the Romi” webpage, you can ignore the paragraph right near the end that says “If you changed the Romi network settings...”. This means the last thing you’ll do in the instructions is press F5, which will deploy the example project. Go ahead and do this! If when you press F5 you get any sort of build error (you will see red text near the bottom of your screen saying build failed), try rebooting VSCode and your Romi, re-connecting to your Romi’s wifi (remember that will take a minute for the wifi network to pop up), and deploying again. Sometimes VSCode will fail to contact the Romi even if there is nothing wrong with your code, but rebooting solves this.</p>
+      },
+      51: {
+        actionType: ActionType.Search,
+        image: <img src='./images/lesson1_34.png' />,
+        content: <p>After you deploy your code, VSCode will bring up a new interface (called the “Robot Simulation” interface) that looks something like this. Note 1: Sometimes the Robot Simulation window will not open the first time you press F5. If this happens to you, simply click the red square to end your program, and press F5 again.</p>
+      },
+      52: {
+        actionType: ActionType.Search,
+        image: <img src='./images/lesson1_35.png' />,
+        content: <p>Note 2: If you have the FRC Driver Station application installed on your computer, you may not see the Robot State box in the upper left of the image below. Instead, you will use the FRC Driver Station app to enable/disable your robot and select modes. If you don’t know what the FRC Driver Station is, don’t worry about this note.</p>
+      },
+      53: {
+        actionType: ActionType.Code,
+        content: <p>This interface lets you control the Romi and see various output from the onboard sensors. But what we’re most interested in right now is making it move. The simplest way to do this with the sample program is to enable its autonomous program. Enabling the autonomous program will cause the Romi to drive forward about ten inches, turn around, drive back to its original location, and then turn around again. Make sure you have the Romi somewhere where it can safely do this (not at the edge of a desk or table) and be ready to enable it. Look at the photo above, and find the “Robot State” box, in the upper left, highlighted in green. Here you will see a list of four robot states – Disabled, Autonomous, Teleoperated, and Test. As soon as you click Autonomous, the Romi will enable and immediately begin its autonomous routine. When you’re ready, give it a try! After the Romi finishes moving, click the Disabled option to disable it again. Although the Romi is lightweight and low power, making sure robots are disabled when not in direct use is a critical safety practice.</p>
+      },
+      54: {
+        actionType: ActionType.Code,
+        content: <p>Now that you’ve made the Romi move on its own, it’s time to try driving it yourself. If you look at the window called “System Joysticks”, highlighted in red, you will see any joysticks that you have plugged in to your computer. In the example, there is an Xbox controller plugged in, but you can use anything that your computer recognizes as a joystick. There’s an additional window called simply “Joysticks”, highlighted in yellow, and these are the joysticks that your code and Romi are looking at for input. You may not see any joysticks listed in this window. If that is the case, you can simply drag and drop your joysticks from the System Joysticks window, to the Joysticks window. In the example photo, the Xbox Controller has been dragged to joystick 0. Do likewise – drag whatever joystick you want to use as your controller to the 0 slot. If you have multiple joysticks plugged in to your computer, you may need to do some quick tests to figure out which one is which. How to do this is explained next.</p>
+      },
+      55: {
         actionType: ActionType.Search,
         content: <p>After dragging your joystick so the Joysticks window, try moving your joystick around and pressing some buttons. You will see the yellow squares at the bottom of the Joysticks window fill/unfill as you press and release buttons, and you can see the axis values change in value as you move the sticks around. This is how you can test which joystick in the System Joysticks is which if you are not sure. If you have one joystick dragged to the joysticks window and pressing buttons/moving the sticks doesn’t change any of the values, you probably dragged a different stick.</p>
       },
-      39: {
+      56: {
         actionType: ActionType.Code,
         content: <p>Once you’ve gotten your joystick to register, and you’ve confirmed it’s in the Joystick[0] slot, you’re ready to enable your robot! Look back at the robot state box, and when you’re ready, click Teleoperated. This will enable the robot. Now you can start trying to drive it around! If you press various buttons and/or sticks on your joystick/controller, you should be able to make the robot move. However, it may or may not control as you expect. For example, by default, if you’re using an Xbox controller, the left joystick will control the robot moving forward and backward, but the left trigger will control turning, and you’ll only be able to turn it one direction since the left trigger can only register positive values (as opposed to a joystick, which can register positive or negative values, e.g. if you push it forward or backward.) Now disable the robot. Your first task for you to start programming will be to fix the controls so it can drive normally. If your robot does drive as expected, which could happen for some controllers, then you can still follow the lesson. You’ll simply change it to drive abnormally, and then fix it again.</p>
       }
     },
     'Ending the Executing Program': {
-      40: {
+      57: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_40.png'/>,
+        image: <img src='./images/lesson1_40.png' />,
         content: <p>After you press deploy your code, a small box with a few buttons will pop up in the top of VSCode. While this box is visible, you may not be able to deploy additional code to the Romi – VSCode may give you an error. When you want to deploy new code, simply click the red square in this box first, and then you can deploy your code:</p>
       }
     },
     'Fixing the Controls': {
-      41: {
+      58: {
         actionType: ActionType.Search,
         content: <p>As discussed above, you can look at the robot simulation interface, and see changes in the joystick section as you move the joysticks or press buttons. Decide which joystick axis you want to control turning. For example if you’re using an Xbox controller, this might be the left joystick being pushed left or right, or the right joystick being pushed left or right. If you’re using a single standalone joystick, you don’t have as many options. But either way, decide what you want, and then start pushing the joystick that way. On the joysticks interface you will see a value change. For example, it might move from 0 to 1 or -1 depending on which direction you push it. The important thing here is to note which axis is changing. The axes are labeled from 0 to 5 in brackets, like so: Axis[4]. Determine which axis is changing, and remember this number.</p>
       },
-      42: {
+      59: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson1_42.png'/>,
+        image: <img src='./images/lesson1_42.png' />,
         content: <p>Now let’s dig into the code. Back in VSCode, open the “Explorer” (highlighted in red, upper left, see the picture below) and then click on src, java, frc, robot, and then finally double click on RobotContainer.java to open it.</p>
       },
-      43: {
+      60: {
         actionType: ActionType.Search,
-        image: <img src='./images/lesson1_43.png'/>,
+        image: <img src='./images/lesson1_43.png' />,
         content: <p>If you’re brand new to programming, there is a lot to take in here – but don’t worry about that. We’ll discuss everything in time, but for now let’s get those controls fixed. Scroll down in RobotContainer.java until you see line number 95. The lines are numbered on the left side of the code. On line 95, you’ll see this:</p>
       },
-      44: {
+      61: {
         actionType: ActionType.Code,
         content: <p>At the end of the line, you’ll see “m_controller.getRawAxis(2))”, highlighted in red above. This line sets which axes of the joystick are being used to control the robot. Change the 2 to whatever axis you identified when testing the controls. If your controls were already correct, try changing it to something else, following the next step, and then changing it back. Once you do this, you can press ctrl+s to save, and F5 to deploy your code to the Romi again. Once the code finishes deploying, you can enable it again and try out your new controls. If you put the right axis, you’ll be able to drive your robot comfortably! If the controls aren’t what you expected, double check your axes again when you push on them using the joysticks interface, and make sure you changed the correct value in the code. Now that you have your Romi driving around, have some fun with it! You’ve taken your first steps into writing code and you already have a robot driving around.</p>
       }
@@ -224,24 +306,24 @@ const data : CourseData = {
       0: {
         actionType: ActionType.Read,
         content: <p>In Lesson 1, you got your Romi driving around and made a small code change. In this lesson,
-        we’ll talk a little bit about Java as a programming language so you can start to make sense of all the
-        folders and files you see in VSCode.</p>
+          we’ll talk a little bit about Java as a programming language so you can start to make sense of all the
+          folders and files you see in VSCode.</p>
       }
     },
     'Printing Output': {
       1: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson2_1.png'/>,
+        image: <img src='./images/lesson2_1.png' />,
         content: <p>One of the simplest things you can do in Java is tell the program to output text. You can do this by calling one of two “methods”. We will talk about what a method is shortly, but for now just think of it as some piece of code can you “call”, or invoke, to do something. Java executes code starting at the top of the file, and then executes lines one by one from top to bottom of the file. So, inserting lines into a program will result in them being executed. The two methods to output text are:</p>
       },
       2: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson2_2.png'/>,
+        image: <img src='./images/lesson2_2.png' />,
         content: <p>In both the method calls above, the text in quotation marks will be outputted. In the second one, a line break will be added to the end of the text. The only difference is the addition of “ln” (with a lowercase L) after “print”, which is abbreviation for “line”. So, in English, system-dot-out-dot-print, and system-dot-out-dot-print-line. You can add these lines of code to your Romi program and try them out for yourself. Open Main.java, which is in the same location as RobotContainer.java from the previous lesson (explorer-{">"}src-{">"}main-{">"}java-{">"}frc-{">"}robot) and scroll down to line 23. Here you can insert these lines. Make sure to put them before the line that says RobotBase.startRobot(Robot::new);. Here is an example:</p>
       },
       3: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson2_3.png'/>,
+        image: <img src='./images/lesson2_3.png' />,
         content: <p>After you do this, you press F5 to run your program and click on the TERMINAL output window example shown below. (It will take a few seconds to compile and run. You do not need your Romi powered on to do this test. You may need to scroll up in the terminal window, but if you look closely, you will see your output text. Here’s the output from running the example above; you can see the difference between print and println because some of the outputs create new lines and some do not.)</p>
       },
       4: {
@@ -266,27 +348,27 @@ const data : CourseData = {
       },
       8: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson2_8.png'/>,
+        image: <img src='./images/lesson2_8.png' />,
         content: <p>To create, or declare, a variable you give it a name and a data type. In Java you do this like so:</p>
       },
       9: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson2_9.png'/>,
+        image: <img src='./images/lesson2_9.png' />,
         content: <p>You can assign values to variables using the assignment operator, which is an equal sign. If you’ve taken algebra in school, then you’ll be used to the equal sign meaning something slightly different – it signifies that two halves of an equation are, in fact, equal. In Java, it sets the first half of the equation equal to the second half. (If you haven’t had algebra yet, don’t worry about this comparison.) Here’s an example of assigning values to variable:</p>
       },
       10: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson2_10.png'/>,
+        image: <img src='./images/lesson2_10.png' />,
         content: <p>You can also declare and initialize, or set a value, for a variable in a single line of code:</p>
       },
       11: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson2_11.png'/>,
+        image: <img src='./images/lesson2_11.png' />,
         content: <p>Once variables exist, they can be changed. For example, a robot’s speed changes frequently during operation, so if you were to have a variable representing the robot’s speed, it would need to constantly updated. You do this the same way as you did when you assigned the variable’s value, using the equal sign. Here is a short sample program that declares and initializes two variables, outputs their values, and then updates one of them and outputs its value again. There are a couple important things to notice here. First, we’re declaring and initializing variables. Then we use SOP to output the values, but instead of a hardcoded text string, we’re using a variable when we call SOP. Then, we change the value of one of the variables and output it again. Also, we change between using print and println, when we want to have text on the same line vs using line breaks. Try writing this program for yourself in the same place in Main.java where you tested your SOP statements earlier.</p>
       },
       12: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson2_12.png'/>,
+        image: <img src='./images/lesson2_12.png' />,
         content: <p>If you haven’t clicked the red square toward the top of your screen to stop your prior program from running yet, do so now. As mentioned in lesson 1, you’ll want to click the red square to stop the already-running program each time you want to deploy a code change, so keep that in mind going forward. Here is the output from that program in the terminal (again, you may need to scroll up to see it):</p>
       },
       13: {
@@ -305,7 +387,7 @@ const data : CourseData = {
       },
       16: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson2_16.png'/>,
+        image: <img src='./images/lesson2_16.png' />,
         content: <p>In this method, the throttle output is represented by the variable called “xaxisSpeed”. To modify the power, simply insert an additional line on line 46, before the previously existing line 46, that looks something like this:</p>
       },
       17: {
@@ -336,13 +418,13 @@ const data : CourseData = {
         actionType: ActionType.Read,
       },
       2: {
-        image: <img src='./images/lesson3_2.png'/>,
+        image: <img src='./images/lesson3_2.png' />,
         content: <p>You can create classes by defining them in files. For example, the Drivetrain.java file defines the Drivetrain class as mentioned above. If you open Drivetrain.java and look at line 14, you’ll see the text “public class Drivetrain” which, declares the Drivetrain class. Then you’ll see several lines that look like normal variable declarations “double kWheelDiameterInch = 2.75591;”, but with extra words in front. Don’t worry about those extra words for now. These are variables that belong to the Drivetrain class and help create a logical model of a drivetrain. Classes can be composed of variables that are relevant to the class, which can then later be accessed when using the class.</p>,
         actionType: ActionType.Search,
       },
       3: {
         actionType: ActionType.Search,
-        image: <img src='./images/lesson3_3.png'/>,
+        image: <img src='./images/lesson3_3.png' />,
         content: <p>If you look at lines 20 and 21, you’ll see two more variables declared – m_left and m_rightMotor. This makes sense – thinking about the Romi, it has two motors, one on each side. However, these variables are unlike variables you’ve seen before. Instead of being of type int or double, they’re of type Spark. What is a Spark? Well, turns out you can hover your mouse over the word Spark to get a brief description. There’s a lot of technical information in the pop-up that you can ignore for now, but the key part is the first sentence: “REV Robotics SPARK Speed Controller.” A Spark represents a real-world object called a speed controller, which physically handles outputting voltage to motors to make them spin. In this case it’s called a SPARK and manufactured by the company REV Robotics.</p>
       },
       4: {
@@ -363,7 +445,7 @@ const data : CourseData = {
       },
       8: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_8.png'/>,
+        image: <img src='./images/lesson3_8.png' />,
         content: <p>The first thing is to create the commands. Let’s start with the command to turn the light on. Navigate to the “commands” folder in src/main/java/frc/robot. Right click on the folder itself in VSCode and select “Create a new class/command” at the bottom of the popup.</p>
       },
       9: {
@@ -380,7 +462,7 @@ const data : CourseData = {
       },
       12: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_12.png'/>,
+        image: <img src='./images/lesson3_12.png' />,
         content: <div>
           <p>3. Put your cursor inside the parentheses on line 14 (NOT the curly bracket at the end) and type “OnBoardIO io”. Then go to the end of line 15 (the next line), press enter, and add two lines of code. These lines initialize the OnBoardIO object.</p>
           <ol type='a'>
@@ -392,7 +474,7 @@ const data : CourseData = {
       },
       13: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_13.png'/>,
+        image: <img src='./images/lesson3_13.png' />,
         content: <p>4. Move your cursor to inside the curly brackets on line 26 (this time NOT the parentheses.) Press enter and then add a line of code by typing “m_io.setGreenLed(true);”. Your execute method should now look like this:</p>
       },
       14: {
@@ -401,27 +483,27 @@ const data : CourseData = {
       },
       15: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_15.png'/>,
+        image: <img src='./images/lesson3_15.png' />,
         content: <p>The first step in hooking them up to a joystick button is figuring out which joystick button is which. This is a similar process to how you figured out which joystick axis was which in lesson one. Open the robot simulator interface if you don’t already have it open (you can press F5 to deploy your code right now if you’re connected to the Romi) and look at the joysticks window. You might need to re-drag your joystick from the Systems Joystick window, to the Joysticks window. Press whatever button on your controller you want to control the light turning on and off, and look at the yellow squares in the joystick window. One of them will light up. Count which number it is, from upper left, starting at one. For example, in this image, button 3 is lit up. Make note of which button lights up as you will need to remember the number in your code.</p>
       },
       16: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_16.png'/>,
+        image: <img src='./images/lesson3_16.png' />,
         content: <p>Now go to RobotContainer.java, put your cursor at the end of line 65, press enter twice, and type out code to match the image below. However, where there are red boxes, change the number 1 to whatever number your button is. These lines of code create a “JoystickButton” object and bind the commands you created to execute when you press and release the button, respectively. You’ll see the red underlines indicating you have errors, and we’ll fix those next. Note that it’s possible that VSCode will fix the red underline under “JoystickButton” on its own. If it does so, that red underline will go away, and all the line numbers in your code will increase by one relative to the image below.</p>
       },
       17: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_17.png'/>,
+        image: <img src='./images/lesson3_17.png' />,
         content: <p>If VSCode does not fix the red underline under JoystickButton automatically, you’ll need to do so yourself. To do so, click on the green text JoystickButton, and you’ll see a little yellow lightbulb pop up to the left. VSCode has limited capabilities to fix common problems for you, and you can access this functionality by clicking on yellow lightbulbs when they appear. Do so and then click “Import ‘JoystickButton’. This will add a line of code to the top of your program, telling the RobotContainer class to look for the JoystickButton class, which you use when you declare your button1 variable on line 67 above (now 68 after it inserts a line of code.) You will have the same errors on your TurnLedOn and Off commands, because RobotContainer needs to look for those files as well. Use the same method to import those two files as well, and your errors will go away. As alluded to above, sometimes VSCode will fix these errors on its own without you needing to make these clicks, but often you’ll have to do this.</p>
       },
       18: {
         actionType: ActionType.Search,
-        image: <img src='./images/lesson3_18.png'/>,
+        image: <img src='./images/lesson3_18.png' />,
         content: <p>When you’re done importing the classes using the lightbulb, your code should be error-free and look like the photo below:</p>
       },
       19: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson3_19.png'/>,
+        image: <img src='./images/lesson3_19.png' />,
         content: <p>You’re now almost done. The last thing to do is to tell the Romi to use the green LED as an output device. The way the Romi is physically constructed, its green and red LEDs use “digital input/output”, or DIO, ports, which can be used for either input or output. Using an LED is an example of output – the Romi will output the light. An example of input would be if you plugged a button into the DIO port, which would let the Romi receive input. We will not cover that in this course. By default, when you create a RomiReference project, both the red and green LED DIO ports are set to receive input, instead of output, so you’ll need to change that. Head to RobotContainer.java, go to line 34, and change the first instance of the word “INPUT” to “OUTPUT”. The second “INPUT” refers to the red LED, which you’re not using in this lesson. Example:</p>
       },
       20: {
@@ -444,18 +526,18 @@ const data : CourseData = {
     },
     'Setting Up a New Workspace': {
       1: {
-        image: <img src='./images/lesson4_1.png'/>,
+        image: <img src='./images/lesson4_1.png' />,
         content: <p>To set up a new workspace in VSCode, click on the “Java Projects” button in the lower-left corner of your screen. Then click the “+” icon. If you don’t see the Java Projects button, click the Explorer icon in the upper-left corner of your screen, and it will appear.</p>,
         actionType: ActionType.Code,
       },
       2: {
-        image: <img src='./images/lesson4_2.png'/>,
+        image: <img src='./images/lesson4_2.png' />,
         content: <p>After clicking the plus, select the “No build tools” option from the drop down:</p>,
         actionType: ActionType.Code,
       },
       3: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson4_3.png'/>,
+        image: <img src='./images/lesson4_3.png' />,
         content: <p>A window will pop up asking you to designate a folder for the project. You can choose whatever folder you want. You might find it helpful to create a folder somewhere on your computer to hold all of your programming projects. Regardless of where you locate it, select a folder for the project location. Type a name for your project and press enter; a good name to use is “MethodsScratch”. After you press enter, you’ll be greeted with a new instance of VSCode and you won’t see any code, but your project will already have a file called App.java. You can open it by drilling into the “src” folder in explorer on the left. Open it and you’ll see something like this</p>
       },
       4: {
@@ -466,14 +548,14 @@ const data : CourseData = {
     'The Main Method': {
       5: {
         actionType: ActionType.Search,
-        image: <img src='./images/lesson4_5.png'/>,
+        image: <img src='./images/lesson4_5.png' />,
         content: <p>Every Java program must have exactly one “main” method, defined by the rather confusing-looking chain of word “public static void main(String[] args)”. Each of those words have a meeting you will learn soon – in this lesson you’ll learn what “void” means, and you can ignore the other words there for now. But the word “main” is the name of the method. Each program must have exactly one, because the main method is where your program starts, and every program needs a defined starting point. In practice there’s usually not much code in main methods; it simply calls some other method with a single line. As an example here’s the main method of your Romi project (you can find this in Main.java in java/frc/robot if you want to look for yourself.) Having only one line of code in your main method is a good practice to follow although for the sample programs you’ll write today it’s not super important</p>
       },
     },
     'YouTube Videos': {
       6: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson4_6.png'/>,
+        image: <img src='./images/lesson4_6.png' />,
         content: <p>Now that you have a work environment setup where you can code, it’s time to get some practice. Throughout this course there will be links to various YouTube videos. There are a couple things to keep in mind with YouTube videos. First, they’re often in a different application for writing code. You might see the author use keyboard shortcuts or interface buttons that don’t exist in VSCode. However, the code itself runs the same way, so don’t worry about matching the keyboard shortcuts. Second, you may find it beneficial to change the playback speed to go either faster or slower depending on your prior experience and understanding. You can change the playback speed by clicking the gear in the lower-right corner and selecting a speed.</p>
       }
     },
@@ -492,25 +574,25 @@ const data : CourseData = {
     'Getting User Input': {
       9: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson4_9.png'/>,
+        image: <img src='./images/lesson4_9.png' />,
         content: <p>With the Romi, we got user input in the form of joystick and button presses. With this desktop app that we’re working on, we don’t have a joystick or buttons, but we do have our computer’s keyboard. Let’s write a quick program that gets input from the user and then prints the input back out. To do this, we’ll use Java’s built in Scanner class. The scanner accepts input in the terminal window where your output shows up. You will be able to type a number, press enter, and your program will read that number. Make sure that if your program is looking for an integer, you give it an integer! If you give it a decimal or a String (text), you will get an error. Here is a sample program you can write in VSCode:</p>
       },
       10: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson4_10.png'/>,
+        image: <img src='./images/lesson4_10.png' />,
         content: <p>Run this program and look at the terminal in the bottom of your screen, and it will be asking you for input. Type an integer, press enter, and the program will echo your input:</p>
       }
     },
     'Practice': {
       11: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson4_11.png'/>,
+        image: <img src='./images/lesson4_11.png' />,
         content: <p>You’re now familiar with several concepts in Java: variables, methods, classes, objects, scope, and getting user input. That’s a lot of knowledge, and it’s enough for you to start writing some programs on your own. We’ll make a small calculator app. Create a new project in VSCode (refer back to the start of this lesson if you forget how to do so) and call it Calculator. In your main method, declare a Scanner object and use it to initialize two integer variables. For example:</p>
       },
       12: {
         actionType: ActionType.Code,
         content: <div>
-          <p style={{margin: 0}}>Now add five methods to your program as follows.</p>
+          <p style={{ margin: 0 }}>Now add five methods to your program as follows.</p>
           <ol>
             <li>A "welcome" method that takes no parameters and returns nothing, that outputs a simple "Welcome to calculator" message to the user.</li>
             <li>An "add" method that takes two integer parameters, adds the two integers together, and outputs the result. This method does not return anything.</li>
@@ -522,8 +604,8 @@ const data : CourseData = {
       },
       13: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson4_13.png'/>,
-        content: <p>Then, in your main method, call each of these six methods using one or both numbers that the user input. For the methods that return a value instead of outputting a result, output the value they return in your main method. You can use a variable to do this like so:</p>        
+        image: <img src='./images/lesson4_13.png' />,
+        content: <p>Then, in your main method, call each of these six methods using one or both numbers that the user input. For the methods that return a value instead of outputting a result, output the value they return in your main method. You can use a variable to do this like so:</p>
       },
       14: {
         actionType: ActionType.Code,
@@ -542,17 +624,17 @@ const data : CourseData = {
     'If Statements': {
       1: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_1.png'/>,
+        image: <img src='./images/lesson5_1.png' />,
         content: <p>If statements in Java are pretty simple to code, and they tend to make a lot of sense logically as well. The basic form is pictured below. This short program declares an int called hour of day and sets its value to 6, and then checks whether that value is less than 10. If it is, it outputs a line of text. Unsurprisingly, if you run this program, it does, indeed, output “Good morning!”. If you were to change the value on line three from 6 to 12, it would output nothing.</p>
       },
       2: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_2.png'/>,
+        image: <img src='./images/lesson5_2.png' />,
         content: <p>There are two additional keywords that go along with if statements: else if, and else. Else if allows you to specify a second condition, that will be checked if and only if the first if statement is false. Pictured below is an example. If you run this program, the output will again be “Good morning!”. Even though 6 is indeed less than 15, line 8 never runs because line 5 is true. If you change the value of hourOfDay to 11, then line 8 will be false, line 8 will run and evaluate to true, and the output will be “Good day!”.</p>
       },
       3: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_3.png'/>,
+        image: <img src='./images/lesson5_3.png' />,
         content: <p>Lastly, there is “else”. An else clause will run if and only if all the prior clauses evaluate to false. Pictured below is an example. In this case, since hourOfDay is 20, the first three if and else if statements all evaluate to false, so the else statement runs and the output is “Good evening!”.</p>
       }
     },
@@ -572,7 +654,7 @@ const data : CourseData = {
       },
       5: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_5.png'/>,
+        image: <img src='./images/lesson5_5.png' />,
         content: <p>Notice how instead of just using one equal sign, the equal to operator uses two equal signs. This is because if you just use one equal sign, you would be assigning a value to a variable. When you write if statements you need to be careful to use both equal signs, because if you use just one, two bad things will happen. First, instead of checking the value of the variable, you will overwrite its old value with whatever you’re checking against. E.g. “if (hourOfDay = 10)” will overwrite hourOfDay with the value 10. Additionally, <em>the operation of overwriting the value of hourOfDay with 10</em> will be successful, and so the operation will return true. So not only will your variable be overwritten, but your if statement will return true because the overwrite was successful. This will cause errors later in your program, so be careful to always use the double equals sign when checking equality. Here’s an example:</p>
       }
     },
@@ -589,28 +671,19 @@ const data : CourseData = {
       },
       8: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson5_8.png'/>,
+        image: <img src='./images/lesson5_8.png' />,
         content: <p>Create a new command called “ArcadeDriveCutPower” in the commands folder. There’s already a command called ArcadeDrive, and we could modify that one instead, but for this project we’ll just create a parallel command so we don’t need to update other references to the original command. After you create the new command, open the original ArcadeDrive command and copy its entire text and paste it into your new command (overwrite the default text in the new command.) After you do this you’ll get a red squiggly line under “ArcadeDrive” on line 11 because the name of the class doesn’t match the filename. Click on the underlined test and a lightbulb appears. Click the lightbulb and choose the first option (“Rename…”) to let VSCode fix the class name for you, based on the filename of your command.</p>
       }
     },
     'Method Arguments': {
       9: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson5_9.png'/>,
-        content: <p>Now that you’re more familiar with methods and passing values into them, it’s time to flex your knowledge by adding a parameter to your new command. You’ll need an additional class variable first. We’ll talk about these next lesson but for now navigate to the end of line 14, press enter, and type “private final Supplier&lt;Boolean&gt; m_cutPowerModeSupplier;”. Now you can add a parameter to the
-        method on line 26 called “ArcadeDriveCutPower”. Notice that this method actually spans a few lines
-        with line breaks after each comma. Position your cursor immediately after “zaxisRotateSupplier” on line
-        29, add a comma and press enter, and add a parameter of type “Supplier&lt;Boolean&gt;” called
-        “cutPowerModeSupplier”. The “Supplier&lt;Boolean&gt;” data type is an advanced concept that we won’t
-        cover in this course, but you can essentially think of it like a boolean variable. In this case that boolean
-        will represent true/false for whether cut power mode is activated. Now that we’ve declared the
-        parameter, it just needs to be initialized. Position your cursor at the end of line 33, press enter, and set
-        your “m_cutPowerModeSupplier” variable equal to the method parameter you just created. Here’s
-        what your class should look like so far:</p>
+        image: <img src='./images/lesson5_9.png' />,
+        content: <p>Now that you’re more familiar with methods and passing values into them, it’s time to flex your knowledge by adding a parameter to your new command. You’ll need an additional class variable first. We’ll talk about these next lesson but for now navigate to the end of line 14, press enter, and type “private final Supplier&lt;Boolean&gt; m_cutPowerModeSupplier;”. Now you can add a parameter to the method on line 26 called “ArcadeDriveCutPower”. Notice that this method actually spans a few lines with line breaks after each comma. Position your cursor immediately after “zaxisRotateSupplier” on line 29, add a comma and press enter, and add a parameter of type “Supplier&lt;Boolean&gt;” called “cutPowerModeSupplier”. The “Supplier&lt;Boolean&gt;” data type is an advanced concept that we won’t cover in this course, but you can essentially think of it like a boolean variable. In this case that boolean will represent true/false for whether cut power mode is activated. Now that we’ve declared the parameter, it just needs to be initialized. Position your cursor at the end of line 33, press enter, and set your “m_cutPowerModeSupplier” variable equal to the method parameter you just created. Here’s what your class should look like so far:</p>
       },
       10: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson5_10.png'/>,
+        image: <img src='./images/lesson5_10.png' />,
         content: <p>The last thing you need to do in this command is change one more line in the execute() method, on line 45. Make two changes to this line. First, make a new method, again to keep references to the original method intact. On line 45, where m_drivetrain.arcadeDrive is called, change “arcadeDrive” to “arcadeDriveCutPower”. Lastly, add a parameter to the method call so your execute() methods looks like this:</p>
       },
       11: {
@@ -629,12 +702,12 @@ const data : CourseData = {
       },
       14: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_14.png'/>,
+        image: <img src='./images/lesson5_14.png' />,
         content: <p>In the prior lesson where we played with these variables, we changed their values in a very standard fashion:</p>
       },
       15: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_15.png'/>,
+        image: <img src='./images/lesson5_15.png' />,
         content: <p>There’s another way to update variables that’s slightly shorter and is nice to use when the update is pretty simple and understandable, such as multiplying by a static coefficient. You can use the “times-equals” operator, like so:</p>
       },
       16: {
@@ -643,7 +716,7 @@ const data : CourseData = {
       },
       17: {
         actionType: ActionType.Read,
-        image: <img src='./images/lesson5_17.png'/>,
+        image: <img src='./images/lesson5_17.png' />,
         content: <p>When you’re done, your method should look something like this:</p>
       },
     },
@@ -654,7 +727,7 @@ const data : CourseData = {
       },
       19: {
         actionType: ActionType.Code,
-        image: <img src='./images/lesson5_19.png'/>,
+        image: <img src='./images/lesson5_19.png' />,
         content: <p>Looking at line 65 again, you see the setDefaultCommand method, and there’s actually another method call inside of it – “getArcadeDriveCommand()”. In VSCode, you can drill-in to any method by clicking on the call for that method and pressing F12. Do this on the getArcadeDriveCommand call and VSCode will navigate you to line 93. Move down one line to 94 and update the “ArcadeDrive” command to “ArcadeDriveCutPower”. You’ll also need to add an additional parameter, since you added a parameter in your command. In order to do this you’ll need to figure out which button you want to use to activate cut power mode. You can do this the same way you figured out which button to use to light up the LED, so do that. If you don’t have the simulation interface open and can’t deploy code because you have errors, you can simply use button 1 for now, and then change it later. Either way, decide on a number for your button, and add a parameter to your method by adding a comma after the “m_controller.getRawAxis(4)”, and then typing the following text: “() -&gt; m_controller.getRawButton(6)”, where 6 is replaced by the number of your button. If you’re using an Xbox controller, 6 will be the right bumper. The reason this line of code looks so messy has to do with the Suppliers that we mentioned earlier won’t be covered in this course. Don’t worry too much about this – there are ways to do all of this without Suppliers, so you aren’t missing out on critical information. We’ll cover this in the future but we’re using them for now because that’s what the example code uses. When you’re done making the changes, your method should look something like this:</p>
       },
       20: {
@@ -662,7 +735,11 @@ const data : CourseData = {
         content: <p>The last thing you’ll need to do is import your new command, which you can do by clicking on the underlined command name, using the lightbulb (VSCode may do this automatically for you.) While you’re there you can remove the unused import for the previous ArcadeDrive command if you want; if you don’t do this, you’ll have a yellow underline pointing out that the import is not used, but it doesn’t affect your program. After you do this you can deploy your code and try out cut power mode! If you still need to, you may want to update which button controls cut power mode. Either way, try driving your Romi, and see how you can hold and release the cut power button to change its characteristics. If you want, you can go back to Drivetrain.java and change the values that you scale the inputs by to make cut power mode cut more or less power</p>
       }
     }
-  }
+  },
+}
+
+for (const key in generated_data) {
+    data[key] = generated_data[key]
 }
 
 export default data;

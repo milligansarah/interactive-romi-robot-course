@@ -5,6 +5,7 @@ type contentBlock = {
     'actionType': ActionType;
     'content': ReactElement;
     'image'?: ReactElement;
+    'more_images'?: ReactElement;
 }
 
 export default contentBlock;
