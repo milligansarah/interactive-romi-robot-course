@@ -34,9 +34,25 @@ function format_raw_processed_data_to_course_data() {
             for (const index in subheading_raw_data) {
                 const content : string = subheading_raw_data[index]["content"]
                 const image : string | undefined = subheading_raw_data[index]["image"]
+                let actionType : string | ActionType = subheading_raw_data[index]["actionType"]
                 const more_images : string | undefined = subheading_raw_data[index]["more_images"];
+                // Convert actionType string to enum type
+                switch (actionType) {
+                    case "Search":
+                        actionType = ActionType.Search
+                        break;
+                    case "Read":
+                        actionType = ActionType.Read
+                        break;
+                    case "Robot":
+                        actionType = ActionType.Robot
+                        break;
+                    default: 
+                        actionType = ActionType.Code
+                        break;
+                }
                 (course_data[lessonKey][subheadingKey] as any)[index] = {
-                    actionType: ActionType.Code,
+                    actionType: actionType,
                     content: require('html-react-parser')(content)
                 } as contentBlock
                 if (typeof(image) == 'string') {
