@@ -250,8 +250,10 @@
             },
             "2": {
                 "actionType": "Read",
-                "content": "<p> \nThe gist of this project is that we will keep track of a target heading, and then constantly \nmeasure the current heading relative to the target heading and “add turning” relative to the difference \nbetween the target and the actual. If the difference is large, we’ll add a lot of turning. If the difference is \nsmall, we’ll add a small amount of turning.  \nHeading \n</p>"
-            },
+                "content": "<p> \nThe gist of this project is that we will keep track of a target heading, and then constantly \nmeasure the current heading relative to the target heading and “add turning” relative to the difference \nbetween the target and the actual. If the difference is large, we’ll add a lot of turning. If the difference is \nsmall, we’ll add a small amount of turning.</p>"
+            }
+        },
+        "Heading": {
             "3": {
                 "actionType": "Code",
                 "content": "<p>Let’s talk about what the word “heading” means in context. We will declare a variable \nrepresenting the target heading of the Romi in the Drivetrain class. Here’s an example. You can go ahead \nand create a new RomiReference project called DriveStraight and copy this into your code in \nDrivetrain.java: \n</p>",
@@ -314,7 +316,7 @@
         "Getting the Gyro Adjustment": {
             "15": {
                 "actionType": "Code",
-                "content": "<div><p>With arcadeDrive setup, it’s time to apply everything you learned about headings and modulo to  calculate the adjustment. It was a lot of reading, but as you saw, a fairly short amount of code, so this  method isn’t too hard. Follow these steps to complete it. An example is below, but see how much you  can complete yourself before looking at the example. </p> <ol><li>Declare the “getGyroAdjustment” method, which should be private and return a double.</li><li>Declare a double variable “headingDifference” and set it equal the gyro’s current z angle minus the target heading. </li><li>Mod the heading difference by 360.</li><li>Apply the two if statements shown above to make sure the range of the heading difference is between -180 and 180.</li></div>"
+                "content": "<div><p>With arcadeDrive setup, it’s time to apply everything you learned about headings and modulo to  calculate the adjustment. It was a lot of reading, but as you saw, a fairly short amount of code, so this  method isn’t too hard. Follow these steps to complete it. An example is below, but see how much you  can complete yourself before looking at the example (see picture at 74% of lesson as well)</p><ol><li>Declare the “getGyroAdjustment” method, which should be private and return a double.</li><li>Declare a double variable “headingDifference” and set it equal the gyro’s current z angle minus the target heading. </li><li>Mod the heading difference by 360.</li><li>Apply the two if statements shown above to make sure the range of the heading difference is between -180 and 180.</li></ol></div>"
             }
         },
         "between -180 and 180.": {
@@ -382,37 +384,37 @@
             },
             "4": {
                 "actionType": "Code",
-                "content": "<p>These four methods – initialize, execute, end, and isFinished – are the four main features of a \ncommand. Let’s look at another command that uses more of these features. In the commands \nfolder, open DriveDistance.java. As you might infer from the name, this command makes the robot \ndrive a specified distance, in inches. Let’s go through this command line-by-line and gain a complete \nunderstanding. \n</p>",
-                "image": "<img src=\"./images/lesson10_0.png\"/>"
+                "content": "<p>These four methods – initialize, execute, end, and isFinished – are the four main features of a \ncommand. Let’s look at another command that uses more of these features. In the commands \nfolder, open DriveDistance.java. As you might infer from the name, this command makes the robot \ndrive a specified distance, in inches. Let’s go through this command line-by-line and gain a complete \nunderstanding. \n</p>"
             },
             "5": {
                 "actionType": "Search",
                 "content": "<p>Line 10 declares the class, and the “extends CommandBase” text specifies that this class is a \ncommand. We’ll talk about this in a future lesson – for now you can just recognize it and understand \nthat it means it’s a command. Then there are three class fields declared – the Drivetrain system to \noperate upon, and the speed and distance with which to drive. \n</p>",
-                "image": "<img src=\"./images/lesson10_1.png\"/>"
+                "image": "<img src=\"./images/lesson10_0.png\"/>"
             },
             "6": {
                 "actionType": "Search",
                 "content": "<p> \nThis is the constructor for DriveDistance – remember, constructors have no return types, and \ntheir method names match their class names. Only constructor methods have these features. This \nconstructor initializes the class variables declared on lines 11-13, and calls the addRequirements method \nto specify that this command requires the drivetrain. Specifying requirements is how the \nCommandScheduler knows how to manage which commands run on which subsystems. \n</p>",
-                "image": "<img src=\"./images/lesson10_2.png\"/>"
+                "image": "<img src=\"./images/lesson10_1.png\"/>"
             },
             "7": {
                 "actionType": "Search",
                 "content": "<p> \nThese lines define the initialize method for DriveDistance. In this case, line 33 tells the robot to \nstop, by giving it zero power and zero turn. Line 34 resets the encoders to make sure that they’re \nmeasuring from zero when the command starts. If the robot had already been driven around (or rolled \nby hand) when the command starts, and the encoders weren’t reset, then the distance measurements \nwould be wrong. There are other ways to account for that, but by default, this command just resets all \nthe measurements to zero when the command is scheduled. \n</p>",
-                "image": "<img src=\"./images/lesson10_3.png\"/>"
+                "image": "<img src=\"./images/lesson10_2.png\"/>"
             },
             "8": {
                 "actionType": "Search",
                 "content": "<p> \nThese lines define what the command should do while executing. This command is called \n“DriveDistance”, and only drives in a straight line, so this method is pretty simple – drive the robot with \nthe speed specified when the command was initialized, and supply 0 power to turning to go in a straight \nline. As this is the execute method, it will be called continuously while the command is running. \n</p>",
-                "image": "<img src=\"./images/lesson10_4.png\"/>"
+                "image": "<img src=\"./images/lesson10_3.png\"/>"
             },
             "9": {
                 "actionType": "Search",
                 "content": "<p> \nThese lines define the end method, which as the comment on line 43 states, is called when the \ncommand either finishes or gets interrupted. Commands end when their isFinished method returns true, \nand the most common way to be interrupted is if another command that requires a subsystem the \ncommand requires is scheduled. For example, you could add code to your robot such that if you press a \nbutton on your controller, it immediately defaults back to operator control, which would interrupt \nDriveDistance because operator control would require the drivetrain. Either way, this method tells the \nrobot to stop when DriveDistance ends. You may want the robot to continue moving after DriveDistance \nends. For example, the default autonomous mode will have the robot spin 180 degrees after it drives \nten inches. This works because unlike the execute method, the end method is called only one time. So \nwhile the end method will stop the robot, it will be very brief and only last until the next line of code \nthat sets the robot’s speed/turning executes. (Of course, it is possible that the next line that sets the \nrobot’s speed continues to set its speed to zero.) Note that line 45 takes a boolean variable \n“interrupted”, so you can know whether your command finished on its own or something interrupted it. \nThis can be useful if you have logic that depends on knowing whether or not your command successfully \ncompleted or was overridden. \n</p>",
-                "image": "<img src=\"./images/lesson10_5.png\"/>"
+                "image": "<img src=\"./images/lesson10_4.png\"/>"
             },
             "10": {
                 "actionType": "Search",
-                "content": "<p> \nThese lines define the last method if of the DriveDistance class/command, the isFinished \nmethod. All the other isFinished methods we’ve looked at so far simply return false, however for driving \na set distance we want to stop after the distance has been driven, so this isFinished method needs to \nactually check something. In this case, line 53 calls a method called “getAverageDistanceInch”, which \nreturns a number of inches that the robot has traveled using the encoders, and compares it to the \ndistance the robot is supposed to travel. You can F12 into this method (and its sub-methods) if you want \nto see how it works, or you can take it for granted that it returns accurate values. Either way, if the \ndistance traveled is greater than or equal to m_distance, isFinished will return true, and when that \nhappens, the command’s end method will run and then the command will be over. Note that Math.abs \nis used here because the distance returned by getAverageDistanceInch will be negative if the robot is \ndriving in reverse. \n</p>"
+                "content": "<p> \nThese lines define the last method if of the DriveDistance class/command, the isFinished \nmethod. All the other isFinished methods we’ve looked at so far simply return false, however for driving \na set distance we want to stop after the distance has been driven, so this isFinished method needs to \nactually check something. In this case, line 53 calls a method called “getAverageDistanceInch”, which \nreturns a number of inches that the robot has traveled using the encoders, and compares it to the \ndistance the robot is supposed to travel. You can F12 into this method (and its sub-methods) if you want \nto see how it works, or you can take it for granted that it returns accurate values. Either way, if the \ndistance traveled is greater than or equal to m_distance, isFinished will return true, and when that \nhappens, the command’s end method will run and then the command will be over. Note that Math.abs \nis used here because the distance returned by getAverageDistanceInch will be negative if the robot is \ndriving in reverse. \n</p>",
+                "image": "<img src=\"./images/lesson10_5.png\"/>"
             },
             "11": {
                 "actionType": "Read",
@@ -452,7 +454,7 @@
             },
             "19": {
                 "actionType": "Code",
-                "content": "<p> \nTry playing around and making a few auto routines of your own. You can also delete the existing \ncommands and change the robot’s speed. Note that if the robot’s wheels slip on the surface you’re \ndriving on, it will make the sensors’ readings of how far you’ve driven or rotated inaccurate. For practice \nexercises, try the following: \n<ol><li>1. Drive the robot in a square with 12-inch sides. </li><li>2. Drive the robot in the shape of an equilateral triangle with 9-inch sides. </li><li>3. Drive the robot in a + shape, of a size of your choosing. </li><li>4. Be creative and make your own path! </li></ol></p>"
+                "content": "<p> \nTry playing around and making a few auto routines of your own. You can also delete the existing \ncommands and change the robot’s speed. Note that if the robot’s wheels slip on the surface you’re \ndriving on, it will make the sensors’ readings of how far you’ve driven or rotated inaccurate. For practice \nexercises, try the following: \n<ol><li>Drive the robot in a square with 12-inch sides. </li><li>Drive the robot in the shape of an equilateral triangle with 9-inch sides. </li><li>Drive the robot in a + shape, of a size of your choosing. </li><li>Be creative and make your own path! </li></ol></p>"
             }
         },
         "Wrap-Up": {
@@ -678,7 +680,7 @@
             },
             "15": {
                 "actionType": "Code",
-                "content": "</p><ol><li>Create a new desktop project called RobotComposition and then create the following classes: RobotComposition (which will contain your main method), Robot, Drivetrain, GamePieceManipulator, CubeElevator, BallShooter, HatchPanelPlacer, PowerUpRobot, DeepSpaceRobot, InfiniteRechargeRobot</li><li>In your robot class, define two protected class fields, called “drivetrain” and “manipulator”. Make their variable types “Drivetrain” and “GamePieceManipulator”, respectively. We haven’t  talked about protected, but it is in between public and private. With protected variables, other  classes cannot access them, but subclasses can, making them handy for use when creating  hierarchies.  </li><li>3. In your PowerUp, DeepSpace, and InfiniteRecharge robot classes, use the extends keyword to make these classes inherit from the class “Robot”. We will refer to these three classes – but not  Robot itself - as “game robot classes”.  </li><li>4. Make your CubeElevator, HatchPanelPlacer, and BallShooter classes extend the class “GamePieceManipulator”. We will refer to these three classes – but not GamePieceManipulator  itself - as “manipulator classes”.  </li><li>5. In each of your game robot classes, create a constructor method that has no parameters. Inside your constructor, create an object of the class of the manipulator that best corresponds to that game. Then set the game robot’s manipulator class field <i>(which it inherited from Robot, and therefore you don’t see in the code file you’re looking at)</i>, to the newly created object. Note how the “manipulator” variable is of type GamePieceManipulator, but across our three game robot classes, we were able to set it equal to objects of three different classes. That is because all of these classes, despite being different from each other, are still GamePieceManipulators.</li></ol></div>"
+                "content": "</p><ol><li>Create a new desktop project called RobotComposition and then create the following classes: RobotComposition (which will contain your main method), Robot, Drivetrain, GamePieceManipulator, CubeElevator, BallShooter, HatchPanelPlacer, PowerUpRobot, DeepSpaceRobot, InfiniteRechargeRobot</li><li>In your robot class, define two protected class fields, called “drivetrain” and “manipulator”. Make their variable types “Drivetrain” and “GamePieceManipulator”, respectively. We haven’t  talked about protected, but it is in between public and private. With protected variables, other  classes cannot access them, but subclasses can, making them handy for use when creating  hierarchies.  </li><li>In your PowerUp, DeepSpace, and InfiniteRecharge robot classes, use the extends keyword to make these classes inherit from the class “Robot”. We will refer to these three classes – but not  Robot itself - as “game robot classes”.</li><li>Make your CubeElevator, HatchPanelPlacer, and BallShooter classes extend the class “GamePieceManipulator”. We will refer to these three classes – but not GamePieceManipulator  itself - as “manipulator classes”.</li><li>In each of your game robot classes, create a constructor method that has no parameters. Inside your constructor, create an object of the class of the manipulator that best corresponds to that game. Then set the game robot’s manipulator class field <i>(which it inherited from Robot, and therefore you don’t see in the code file you’re looking at)</i>, to the newly created object. Note how the “manipulator” variable is of type GamePieceManipulator, but across our three game robot classes, we were able to set it equal to objects of three different classes. That is because all of these classes, despite being different from each other, are still GamePieceManipulators.</li></ol></div>"
             },
             "16": {
                 "actionType": "Code",
